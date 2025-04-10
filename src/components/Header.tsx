@@ -1,5 +1,7 @@
+
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -20,6 +22,15 @@ const Header = () => {
                 Projetos
               </Link>
             </li>
+            <motion.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link to="/resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Currículo
+              </Link>
+            </motion.li>
           </ul>
         </nav>
         <div className="ml-4">
