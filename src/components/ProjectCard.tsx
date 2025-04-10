@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { Project } from "../data/projects";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
 interface ProjectCardProps {
   project: Project;
@@ -8,7 +10,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
       <div className="h-48 bg-gray-200 relative">
         <img
           src={project.image}
@@ -16,25 +18,30 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="p-6">
-        <div className="flex flex-wrap gap-2 mb-3">
+      <CardHeader className="pb-2">
+        <div className="flex flex-wrap gap-2 mb-2">
           {project.tags.slice(0, 3).map((tag) => (
-            <span
+            <Badge
               key={tag}
-              className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded-full"
+              variant="secondary"
+              className="bg-blue-100 text-blue-800 hover:bg-blue-200"
             >
               {tag}
-            </span>
+            </Badge>
           ))}
           {project.tags.length > 3 && (
-            <span className="text-xs px-2 py-1 bg-gray-100 text-gray-800 rounded-full">
+            <Badge variant="outline" className="bg-gray-100 text-gray-800">
               +{project.tags.length - 3}
-            </span>
+            </Badge>
           )}
         </div>
         <h3 className="text-xl font-bold mb-2 text-gray-800">{project.title}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
-        <div className="flex justify-between items-center">
+      </CardHeader>
+      <CardContent className="pb-2">
+        <p className="text-gray-600 line-clamp-3">{project.description}</p>
+      </CardContent>
+      <CardFooter className="pt-0 mt-auto">
+        <div className="flex justify-between items-center w-full">
           <span className="text-sm text-gray-500">{project.date}</span>
           <Link
             to={`/project/${project.id}`}
@@ -43,8 +50,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             View Project
           </Link>
         </div>
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   );
 };
 

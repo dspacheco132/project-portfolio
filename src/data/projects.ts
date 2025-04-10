@@ -14,64 +14,64 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "web-dashboard",
-    title: "Web Analytics Dashboard",
-    description: "A responsive dashboard for tracking website analytics with real-time data visualization.",
-    longDescription: "This project features a comprehensive web analytics dashboard built with React and Chart.js. It provides real-time data visualization for website traffic, user behavior, and conversion metrics. The dashboard includes customizable widgets, date range filters, and exportable reports. I implemented responsive design principles to ensure optimal viewing across all devices, and used a modular component architecture for maintainability.",
+    id: "cloud-infrastructure",
+    title: "Multi-Cloud Architecture",
+    description: "Enterprise-grade infrastructure deployment across AWS and Oracle Cloud with Terraform IaC.",
+    longDescription: "This project showcases a sophisticated multi-cloud architecture that leverages both AWS and Oracle Cloud Infrastructure. Using Terraform as the infrastructure-as-code tool, I implemented a resilient and scalable environment that provides high availability and disaster recovery capabilities.\n\nThe infrastructure includes VPCs/VCNs, subnets, security groups, load balancers, and auto-scaling groups configured in both cloud providers. A custom module system was developed to maintain infrastructure consistency across environments while allowing for provider-specific optimizations.\n\nAn end-to-end CI/CD pipeline was established using GitHub Actions to validate, plan, and apply infrastructure changes in a controlled manner. The project also features comprehensive monitoring using Grafana dashboards that provide unified visibility across both cloud environments.",
     image: "/placeholder.svg",
-    tags: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
-    date: "March 2025",
+    tags: ["AWS", "Oracle Cloud", "Terraform", "IaC", "CI/CD"],
+    date: "February 2025",
     featured: true,
-    liveUrl: "https://example.com/dashboard",
-    githubUrl: "https://github.com/example/dashboard"
+    liveUrl: "https://example.com/cloud-architecture",
+    githubUrl: "https://github.com/example/cloud-architecture"
   },
   {
-    id: "mobile-app",
-    title: "Fitness Tracking Mobile App",
-    description: "A cross-platform mobile application for tracking workouts and nutrition with personalized recommendations.",
-    longDescription: "The Fitness Tracking App is designed to help users maintain their health goals with intuitive workout and nutrition tracking. Built with React Native, it works seamlessly across iOS and Android platforms. Key features include customizable workout plans, nutrition logging with barcode scanning, progress visualization, and social sharing capabilities. The app integrates with various health APIs to provide comprehensive health insights.",
+    id: "devops-pipeline",
+    title: "DevOps Containerization Pipeline",
+    description: "Automated containerization workflow using Docker, GitHub Actions and Cloudflare infrastructure.",
+    longDescription: "This project demonstrates a modern DevOps pipeline focused on containerization and continuous deployment. I designed and implemented a complete workflow that begins with code commits and ends with containerized applications running in production.\n\nThe pipeline includes Docker image building with multi-stage builds for optimization, vulnerability scanning of container images, automated testing of containerized applications, and deployment to container orchestration platforms.\n\nThe infrastructure leverages Cloudflare for edge computing, CDN capabilities, and DDoS protection. The project features zero-downtime deployments using blue-green deployment strategies, with automated rollbacks in case of failures. Grafana dashboards were configured to monitor application performance and container health metrics in real-time.",
     image: "/placeholder.svg",
-    tags: ["React Native", "Firebase", "Redux", "Health API"],
+    tags: ["Docker", "Cloudflare", "GitHub Actions", "DevOps", "Grafana"],
     date: "January 2025",
     featured: true,
-    liveUrl: "https://example.com/fitness-app",
-    githubUrl: "https://github.com/example/fitness-app"
+    liveUrl: "https://example.com/devops-pipeline",
+    githubUrl: "https://github.com/example/devops-pipeline"
   },
   {
-    id: "e-commerce",
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with product management, cart functionality, and secure payment processing.",
-    longDescription: "This e-commerce platform provides small businesses with a complete solution for selling products online. Built with a modern tech stack, it features product management, inventory tracking, secure cart functionality, and integration with multiple payment processors. The admin dashboard provides insights into sales, customer behavior, and inventory levels. The platform is designed for scalability and can handle high traffic volumes with optimized performance.",
+    id: "data-analytics",
+    title: "Data Analytics Platform",
+    description: "Python-based analytics platform with database integration, data visualization, and ETL pipelines.",
+    longDescription: "This comprehensive data analytics platform was built to process, analyze, and visualize large datasets from various sources. Developed primarily in Python, it includes custom ETL (Extract, Transform, Load) pipelines that integrate with multiple database systems including PostgreSQL, MySQL, and Oracle.\n\nThe platform features automated data quality checks, data normalization processes, and advanced analytics using libraries such as Pandas, NumPy, and SciPy. The visualization layer was built using a combination of Matplotlib, Seaborn, and interactive Plotly dashboards.\n\nThe entire system is containerized for consistent deployment across environments, with database connections secured through proper authentication mechanisms. Performance optimizations include query tuning, appropriate indexing strategies, and caching mechanisms to handle large-scale data processing efficiently.",
     image: "/placeholder.svg",
-    tags: ["Next.js", "MongoDB", "Stripe", "Vercel"],
+    tags: ["Python", "Databases", "ETL", "Data Analytics", "Visualization"],
     date: "December 2024",
     featured: false,
-    liveUrl: "https://example.com/store",
-    githubUrl: "https://github.com/example/store"
+    liveUrl: "https://example.com/data-analytics",
+    githubUrl: "https://github.com/example/data-analytics"
   },
   {
-    id: "ai-assistant",
-    title: "AI Personal Assistant",
-    description: "A natural language processing assistant for task management, scheduling, and information retrieval.",
-    longDescription: "The AI Personal Assistant uses natural language processing to help users manage their daily tasks, schedule appointments, and retrieve information. It can interpret complex queries, learn from user interactions, and provide increasingly personalized assistance over time. The assistant integrates with calendar apps, email services, and various APIs to offer comprehensive functionality. Voice recognition capabilities enable hands-free operation for added convenience.",
+    id: "auth-system",
+    title: "Enterprise Authentication System",
+    description: "Secure authentication and authorization system implementing OAuth 2.0 and OpenID Connect protocols.",
+    longDescription: "This enterprise-grade authentication and authorization system provides a secure foundation for applications requiring robust identity management. The system implements OAuth 2.0 and OpenID Connect protocols to enable single sign-on (SSO) capabilities across multiple applications.\n\nKey security features include JWT (JSON Web Token) based authentication, role-based access control (RBAC), multi-factor authentication (MFA), and comprehensive audit logging. The system supports various authentication methods including social logins, SAML for enterprise identity providers, and traditional username/password authentication with advanced password policies.\n\nThe entire solution was designed with security best practices in mind, including proper token validation, protection against common web vulnerabilities (OWASP Top 10), and secure communication over TLS. A custom admin interface allows for user management, role assignments, and detailed access reports.",
     image: "/placeholder.svg",
-    tags: ["Python", "TensorFlow", "NLP", "REST API"],
+    tags: ["OAuth", "Security", "Authentication", "Authorization", "JWT"],
     date: "October 2024",
-    featured: false,
-    liveUrl: "https://example.com/assistant",
-    githubUrl: "https://github.com/example/assistant"
+    featured: true,
+    liveUrl: "https://example.com/auth-system",
+    githubUrl: "https://github.com/example/auth-system"
   },
   {
-    id: "blockchain",
-    title: "Blockchain Voting System",
-    description: "A secure and transparent voting platform built on blockchain technology for organizational elections.",
-    longDescription: "This blockchain-based voting system provides a secure, transparent, and tamper-proof platform for conducting elections. It uses smart contracts to ensure vote integrity and provides real-time results. The system includes voter verification, anonymous balloting, and comprehensive audit trails. The web interface makes voting accessible while maintaining the highest security standards. This solution is particularly valuable for organizations requiring transparent governance processes.",
+    id: "agile-platform",
+    title: "Agile Project Management Tool",
+    description: "Custom Scrum and Kanban platform designed from the ground up with Figma and implemented with modern technologies.",
+    longDescription: "This Agile project management platform was designed to support Scrum and Kanban methodologies while addressing specific workflow needs not met by existing tools. The design process began with extensive user research and competitive analysis, followed by creating comprehensive wireframes and high-fidelity prototypes in Figma.\n\nThe platform features interactive Scrum boards, customizable Kanban workflows, burndown/burnup charts, velocity tracking, and sprint planning tools. It includes automated workflows for sprint transitions, integration with version control systems for linking commits to user stories, and customizable reporting capabilities.\n\nThe implementation utilized a modern technology stack with a focus on real-time collaboration features, allowing multiple team members to work simultaneously. The UI was carefully crafted to provide an intuitive experience based on the detailed Figma prototypes, with particular attention to responsive design for mobile and tablet usage during stand-up meetings.",
     image: "/placeholder.svg",
-    tags: ["Solidity", "Ethereum", "Web3.js", "React"],
+    tags: ["Scrum", "Agile", "Project Management", "Figma", "UI/UX"],
     date: "August 2024",
-    featured: true,
-    liveUrl: "https://example.com/voting",
-    githubUrl: "https://github.com/example/voting"
+    featured: false,
+    liveUrl: "https://example.com/agile-platform",
+    githubUrl: "https://github.com/example/agile-platform"
   }
 ];
 
