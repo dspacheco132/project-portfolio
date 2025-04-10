@@ -26,10 +26,10 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Meus <span className="text-blue-600 dark:text-blue-400">Projetos</span>
+                Os meus <span className="text-blue-600 dark:text-blue-400">Projetos</span>
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Bem-vindo ao meu portfólio onde documento minha jornada construindo 
+                Bem-vindo ao meu portfólio onde documento a minha jornada construindo 
                 websites, aplicações e soluções técnicas criativas.
               </p>
               <Link
