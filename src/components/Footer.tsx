@@ -13,7 +13,7 @@ const Footer = () => {
               Diogo<span className="text-blue-600">Pacheco</span>
             </Link>
             <p className="text-gray-600 mt-2">
-              Meu portfólio de projetos e trabalhos
+              O meu portfólio de projetos e trabalhos
             </p>
           </div>
           <div className="flex space-x-6">
@@ -33,7 +33,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/diogo-pacheco-1a280a264"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 transition-colors"
