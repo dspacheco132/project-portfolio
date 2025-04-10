@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Link to="/" className="text-xl font-bold text-gray-800">
-              Project<span className="text-blue-600">Blog</span>
+              Diogo<span className="text-blue-600">Pacheco</span>
             </Link>
             <p className="text-gray-600 mt-2">
-              Showcasing my latest projects and work
+              Meu portfólio de projetos e trabalhos
             </p>
           </div>
           <div className="flex space-x-6">
@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-6 text-center text-gray-500 text-sm">
-          &copy; {currentYear} ProjectBlog. All rights reserved.
+          &copy; {currentYear} Diogo Pacheco. Todos os direitos reservados.
         </div>
       </div>
     </footer>

@@ -24,7 +24,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
-          Project<span className="text-blue-600">Blog</span>
+          Diogo<span className="text-blue-600">Pacheco</span>
         </Link>
         <nav className="hidden md:flex">
           <NavigationMenu>
@@ -36,11 +36,11 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/projects" className={navigationMenuTriggerStyle()}>
-                  Projects
+                  Projetos
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Technologies</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Tecnologias</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {technologies.map((category) => (

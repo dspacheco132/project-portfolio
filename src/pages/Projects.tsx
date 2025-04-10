@@ -22,9 +22,9 @@ const Projects = () => {
         <section className="bg-gradient-to-b from-white to-gray-50 py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Meus Projetos</h1>
               <p className="text-xl text-gray-600">
-                Browse through my collection of projects and see what I've been working on
+                Conheça minha coleção de projetos e veja o que tenho desenvolvido
               </p>
             </div>
           </div>
@@ -42,7 +42,7 @@ const Projects = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
-                All Projects
+                Todos os Projetos
               </button>
               
               {uniqueTags.map((tag) => (
@@ -73,15 +73,15 @@ const Projects = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                <h3 className="text-2xl font-medium text-gray-800 mb-2">No Projects Found</h3>
+                <h3 className="text-2xl font-medium text-gray-800 mb-2">Nenhum Projeto Encontrado</h3>
                 <p className="text-gray-600">
-                  There are no projects matching your selected filter.
+                  Não há projetos que correspondam ao filtro selecionado.
                 </p>
                 <button
                   onClick={() => setFilter("all")}
                   className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  Show All Projects
+                  Mostrar Todos os Projetos
                 </button>
               </div>
             )}
