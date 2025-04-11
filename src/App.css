@@ -43,59 +43,121 @@
 }
 
 /* Enhanced styling for white theme */
-body {
+.light body {
   background-color: #ffffff;
   color: #333333;
 }
 
-.section-light {
+.light .section-light {
   background-color: #f8f9fa;
 }
 
-.section-white {
+.light .section-white {
   background-color: #ffffff;
 }
 
+/* Enhanced styling for dark theme */
+.dark body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark .section-light {
+  background-color: #1e1e1e;
+}
+
+.dark .section-white {
+  background-color: #121212;
+}
+
 .card-shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light .card-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark .card-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-shadow:hover {
   transform: translateY(-5px);
+}
+
+.light .card-shadow:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.text-primary {
+.dark .card-shadow:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.light .text-primary {
   color: #3a86ff;
 }
 
-.text-secondary {
+.dark .text-primary {
+  color: #5a9fff;
+}
+
+.light .text-secondary {
   color: #555555;
 }
 
-.text-muted {
+.dark .text-secondary {
+  color: #aaaaaa;
+}
+
+.light .text-muted {
   color: #6c757d;
 }
 
-.border-light {
+.dark .text-muted {
+  color: #8c8c8c;
+}
+
+.light .border-light {
   border: 1px solid #e9ecef;
 }
 
-.btn-primary {
+.dark .border-light {
+  border: 1px solid #333333;
+}
+
+.light .btn-primary {
   background-color: #3a86ff;
   border-color: #3a86ff;
   color: white;
 }
 
-.btn-primary:hover {
+.light .btn-primary:hover {
   background-color: #2a75f0;
   border-color: #2a75f0;
 }
 
+.dark .btn-primary {
+  background-color: #2a75f0;
+  border-color: #2a75f0;
+  color: white;
+}
+
+.dark .btn-primary:hover {
+  background-color: #1a65e0;
+  border-color: #1a65e0;
+}
+
 .featured-section {
-  background-color: #f8f9fa;
   padding: 2rem 0;
+}
+
+.light .featured-section {
+  background-color: #f8f9fa;
+}
+
+.dark .featured-section {
+  background-color: #1e1e1e;
 }
 
 .award-img {
