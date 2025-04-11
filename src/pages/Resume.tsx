@@ -3,69 +3,88 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Mail, Phone, Award, GraduationCap, Briefcase } from "lucide-react";
+import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin } from "lucide-react";
 
 const Resume = () => {
   const skills = [
-    "AWS", "Oracle Cloud", "Terraform", "Docker", "Kubernetes", "Python", 
-    "JavaScript", "React", "Node.js", "Flask", "Git", "CI/CD", "Linux",
-    "Grafana", "Prometheus", "Shell Scripting", "Agile", "Scrum"
+    "Oracle Cloud", "OAuth", "Tailscale", "Python", 
+    "JavaScript", "React", "Docker", "Kubernetes", "Git", "CI/CD", "Linux",
+    "Cisco", "Network Security", "Cybersecurity", "Shell Scripting"
   ];
 
   const experiences = [
     {
-      title: "Cloud Infrastructure Engineer",
-      company: "TechSolutions Inc.",
-      period: "Jan 2024 - Present",
-      location: "Remote",
+      title: "Web Developer Internship",
+      company: "Expolab - Centro Ciência Viva",
+      period: "March 2024 - August 2024 (6 months)",
+      location: "Lagoa, Ilha de São Miguel, Portugal",
       description: [
-        "Designed and implemented multi-cloud architecture using AWS and Oracle Cloud",
-        "Automated infrastructure deployment with Terraform, reducing provisioning time by 80%",
-        "Established CI/CD pipelines using GitHub Actions for infrastructure changes",
-        "Created monitoring dashboards with Grafana for unified cloud resource visibility"
-      ]
-    },
-    {
-      title: "DevOps Intern",
-      company: "InnovateTech",
-      period: "May 2023 - Dec 2023",
-      location: "Lisbon, Portugal",
-      description: [
-        "Assisted in containerizing applications using Docker and Docker Compose",
-        "Contributed to Kubernetes deployment configurations and troubleshooting",
-        "Developed shell scripts for automating routine maintenance tasks",
-        "Participated in on-call rotation providing support for production systems"
+        "Web development internship with evaluation score: 20/20",
+        "Created responsive web applications using modern frameworks",
+        "Worked with both frontend and backend technologies",
+        "Collaborated with team members in an agile environment"
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Lisbon",
-      period: "2022 - Present",
-      description: "Focus on cloud computing, distributed systems, and software engineering principles"
+      degree: "Cybersecurity Specialist",
+      institution: "Escola de Novas Tecnologias dos Açores",
+      period: "September 2024 - 2025",
+      description: "Specialized technical training in cybersecurity principles and practices"
     },
     {
-      degree: "AWS Certified Solutions Architect - Associate",
-      institution: "Amazon Web Services",
-      period: "2024",
-      description: "Professional certification demonstrating expertise in AWS architecture and services"
+      degree: "Computer Networks - Installation and Management",
+      institution: "Escola de Novas Tecnologias dos Açores",
+      period: "2021 - July 2024",
+      description: "Technical degree focused on network infrastructure, installation and management"
     }
+  ];
+
+  const certifications = [
+    "CyberOps Associate",
+    "CCNA: Introduction to Networks",
+    "GDPR for Attentive Citizens",
+    "Cybersecurity Citizen",
+    "CCNA: Switching, Routing, and Wireless Essentials"
   ];
 
   const awards = [
     {
-      title: "Cloud Computing Hackathon - 1st Place",
-      organization: "TechWeek Lisbon",
+      title: "2nd Place at Azores Skills - CyberSecurity",
+      organization: "Azores Skills",
       year: "2023",
-      description: "Developed an auto-scaling, fault-tolerant web application on AWS within 48 hours"
+      description: "Recognition for excellence in cybersecurity skills competition",
+      image: "/lovable-uploads/5e2aad71-c7bd-474c-a6d5-58f3c2d068e1.png"
     },
     {
-      title: "Outstanding Technical Achievement",
-      organization: "InnovateTech",
+      title: "3rd Place at Atlântico Junior - FLAD",
+      organization: "FLAD",
+      year: "2022",
+      description: "Award for innovation and technical achievement",
+      image: "/azores-skills-award.jpg"
+    },
+    {
+      title: "3rd Place at SkillsPortugal - CyberSecurity",
+      organization: "SkillsPortugal",
       year: "2023",
-      description: "Recognized for optimizing deployment pipeline, reducing build times by 60%"
+      description: "National recognition for cybersecurity skills",
+      image: "/skills-portugal-award.jpg"
+    },
+    {
+      title: "Merit Award - Jolera",
+      organization: "Jolera",
+      year: "2023",
+      description: "Recognition for outstanding technical achievement",
+      image: "/merit-jolera.jpg"
+    },
+    {
+      title: "Merit Award - Câmara Municipal de Ponta Delgada",
+      organization: "Ponta Delgada City Hall",
+      year: "2022",
+      description: "Recognition for contributions to local technology initiatives",
+      image: "/merit-ponta-delgada.jpg"
     }
   ];
 
@@ -85,26 +104,34 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       
       <main className="flex-grow py-16">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Resume</h1>
-            <div className="flex flex-col md:flex-row gap-6 text-gray-600 dark:text-gray-300">
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">Resume</h1>
+            <div className="flex flex-col md:flex-row gap-6 text-gray-600">
               <div className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
-                <span>diogopacheco132@gmail.com</span>
+                <Mail className="h-5 w-5 mr-2 text-blue-600" />
+                <span>diogosilvapalcheco@enta.pt</span>
               </div>
               <div className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
-                <span>+351 912345678</span>
+                <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                <span>Ponta Delgada, Portugal</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
-                <span>Lisbon, Portugal</span>
+                <Linkedin className="h-5 w-5 mr-2 text-blue-600" />
+                <a href="https://www.linkedin.com/in/diogo-pacheco-1a280a264/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                  LinkedIn
+                </a>
+              </div>
+              <div className="flex items-center">
+                <Github className="h-5 w-5 mr-2 text-blue-600" />
+                <a href="https://github.com/Swift132" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -116,15 +143,13 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-              Professional Summary
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+              Summary
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Passionate cloud and DevOps engineer with experience in designing, implementing, 
-              and maintaining infrastructure across multiple cloud platforms. Skilled in infrastructure 
-              automation, containerization, and CI/CD pipelines. Committed to creating efficient, 
-              scalable, and secure technical solutions. Currently pursuing a Computer Science degree 
-              while working on real-world projects.
+            <p className="text-gray-700 mb-6">
+              I am Diogo Pacheco, a focused, practical person with a passion for problem-solving. 
+              I value continuous learning and teamwork to achieve objective and relevant results.
+              Currently studying Cybersecurity at ENTA (Escola de Novas Tecnologias dos Açores).
             </p>
           </motion.section>
           
@@ -135,13 +160,13 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              Technical Skills
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              Key Skills
             </h2>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <motion.div key={index} variants={item}>
-                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800 px-3 py-1.5 text-sm">
+                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 px-3 py-1.5 text-sm">
                     {skill}
                   </Badge>
                 </motion.div>
@@ -156,8 +181,8 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <Briefcase className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <Briefcase className="h-6 w-6 mr-2 text-blue-600" />
               Work Experience
             </h2>
             
@@ -165,23 +190,23 @@ const Resume = () => {
               {experiences.map((experience, index) => (
                 <motion.div 
                   key={index} 
-                  className="border-l-2 border-blue-600 dark:border-blue-400 pl-6 relative"
+                  className="border-l-2 border-blue-600 pl-6 relative"
                   variants={item}
                 >
-                  <div className="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full -left-[7px] top-2"></div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{experience.title}</h3>
+                  <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-[7px] top-2"></div>
+                  <h3 className="text-xl font-bold text-gray-900">{experience.title}</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <p className="text-gray-800 dark:text-gray-200 font-medium">{experience.company}</p>
-                    <div className="flex items-center text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-800 font-medium">{experience.company}</p>
+                    <div className="flex items-center text-gray-600">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{experience.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-3 flex items-center">
+                  <p className="text-gray-600 mb-3 flex items-center">
                     <MapPin className="h-4 w-4 mr-1" />
                     {experience.location}
                   </p>
-                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                  <ul className="list-disc list-inside text-gray-700 space-y-1">
                     {experience.description.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
@@ -198,8 +223,8 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <GraduationCap className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <GraduationCap className="h-6 w-6 mr-2 text-blue-600" />
               Education
             </h2>
             
@@ -207,19 +232,44 @@ const Resume = () => {
               {education.map((edu, index) => (
                 <motion.div 
                   key={index} 
-                  className="border-l-2 border-blue-600 dark:border-blue-400 pl-6 relative"
+                  className="border-l-2 border-blue-600 pl-6 relative"
                   variants={item}
                 >
-                  <div className="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full -left-[7px] top-2"></div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{edu.degree}</h3>
+                  <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-[7px] top-2"></div>
+                  <h3 className="text-xl font-bold text-gray-900">{edu.degree}</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <p className="text-gray-800 dark:text-gray-200 font-medium">{edu.institution}</p>
-                    <div className="flex items-center text-gray-600 dark:text-gray-400">
+                    <p className="text-gray-800 font-medium">{edu.institution}</p>
+                    <div className="flex items-center text-gray-600">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{edu.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">{edu.description}</p>
+                  <p className="text-gray-700">{edu.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Certifications */}
+          <motion.section 
+            className="max-w-4xl mx-auto mb-16"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              Certifications
+            </h2>
+            
+            <div className="space-y-2">
+              {certifications.map((cert, index) => (
+                <motion.div 
+                  key={index} 
+                  className="flex items-center"
+                  variants={item}
+                >
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <p className="text-gray-700">{cert}</p>
                 </motion.div>
               ))}
             </div>
@@ -232,28 +282,36 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <Award className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <Award className="h-6 w-6 mr-2 text-blue-600" />
               Awards & Achievements
             </h2>
             
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {awards.map((award, index) => (
                 <motion.div 
                   key={index} 
-                  className="border-l-2 border-blue-600 dark:border-blue-400 pl-6 relative"
+                  className="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100"
                   variants={item}
                 >
-                  <div className="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full -left-[7px] top-2"></div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{award.title}</h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <p className="text-gray-800 dark:text-gray-200 font-medium">{award.organization}</p>
-                    <div className="flex items-center text-gray-600 dark:text-gray-400">
+                  {award.image && (
+                    <div className="mb-4 h-48 overflow-hidden rounded-md">
+                      <img 
+                        src={award.image} 
+                        alt={award.title} 
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{award.title}</h3>
+                  <div className="flex items-center justify-between mb-3">
+                    <p className="text-gray-700 font-medium">{award.organization}</p>
+                    <div className="flex items-center text-gray-600">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{award.year}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">{award.description}</p>
+                  <p className="text-gray-700">{award.description}</p>
                 </motion.div>
               ))}
             </div>

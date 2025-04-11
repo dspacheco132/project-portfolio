@@ -7,19 +7,19 @@ import { motion } from "framer-motion";
 const ProfileSection = () => {
   const skills = [
     { name: "Oracle Cloud", color: "bg-orange-100 text-orange-800 hover:bg-orange-200" },
-    { name: "AWS", color: "bg-yellow-100 text-yellow-800 hover:bg-yellow-200" },
-    { name: "Terraform", color: "bg-purple-100 text-purple-800 hover:bg-purple-200" },
-    { name: "Docker", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
-    { name: "Cloudflare", color: "bg-orange-100 text-orange-800 hover:bg-orange-200" },
-    { name: "Python", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
-    { name: "Scrum", color: "bg-green-100 text-green-800 hover:bg-green-200" },
-    { name: "Figma", color: "bg-purple-100 text-purple-800 hover:bg-purple-200" },
     { name: "OAuth", color: "bg-red-100 text-red-800 hover:bg-red-200" },
-    { name: "Grafana", color: "bg-orange-100 text-orange-800 hover:bg-orange-200" },
+    { name: "Tailscale", color: "bg-purple-100 text-purple-800 hover:bg-purple-200" },
+    { name: "Docker", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
+    { name: "Cisco", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
+    { name: "Python", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
+    { name: "Network Security", color: "bg-green-100 text-green-800 hover:bg-green-200" },
+    { name: "Cybersecurity", color: "bg-red-100 text-red-800 hover:bg-red-200" },
+    { name: "CCNA", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
+    { name: "CyberOps", color: "bg-orange-100 text-orange-800 hover:bg-orange-200" },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 dark:text-white transition-colors duration-300">
+    <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
           <motion.div 
@@ -28,16 +28,16 @@ const ProfileSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Avatar className="h-48 w-48 border-4 border-white dark:border-gray-700 shadow-lg">
+            <Avatar className="h-48 w-48 border-4 border-white shadow-lg">
               <AvatarImage src="/diogo-profile.jpg" alt="Diogo Pacheco" />
-              <AvatarFallback className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+              <AvatarFallback className="bg-blue-100 text-blue-800">
                 <User className="h-24 w-24" />
               </AvatarFallback>
             </Avatar>
           </motion.div>
           <div className="text-center md:text-left">
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -45,22 +45,23 @@ const ProfileSection = () => {
               Diogo Pacheco
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 dark:text-gray-300 mb-4"
+              className="text-xl text-gray-600 mb-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              20 years old
+              Cybersecurity Student | ENTA
             </motion.p>
             <motion.p 
-              className="text-gray-700 dark:text-gray-300 max-w-2xl mb-6"
+              className="text-gray-700 max-w-2xl mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Developer passionate about technology with experience in Oracle Cloud, 
-              AWS, Terraform, Docker, and various other technologies. My focus is creating 
-              efficient and innovative technical solutions.
+              I am a focused, practical person with a passion for problem-solving.
+              I value continuous learning and teamwork to achieve objective and relevant results.
+              Currently studying Cybersecurity with experience in Oracle Cloud, OAuth, Tailscale,
+              and various other technologies.
             </motion.p>
             
             <motion.div 
