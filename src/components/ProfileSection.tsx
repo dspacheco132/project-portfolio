@@ -50,7 +50,7 @@ const ProfileSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Cybersecurity Student | ENTA
+              Cybersecurity Specialist | ENTA
             </motion.p>
             <motion.p 
               className="text-gray-700 max-w-2xl mb-6"
