@@ -16,7 +16,7 @@ const Index = () => {
       <main className="flex-grow">
         <ProfileSection />
         
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 section-light">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Featured Projects</h2>
             
@@ -29,7 +29,7 @@ const Index = () => {
             <div className="text-center mt-12">
               <a 
                 href="/projects" 
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors btn-primary"
               >
                 View All Projects
               </a>

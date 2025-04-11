@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,74 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Enhanced styling for white theme */
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.section-light {
+  background-color: #f8f9fa;
+}
+
+.section-white {
+  background-color: #ffffff;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.text-primary {
+  color: #3a86ff;
+}
+
+.text-secondary {
+  color: #555555;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.border-light {
+  border: 1px solid #e9ecef;
+}
+
+.btn-primary {
+  background-color: #3a86ff;
+  border-color: #3a86ff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2a75f0;
+  border-color: #2a75f0;
+}
+
+.featured-section {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.award-img {
+  max-height: 200px;
+  object-fit: contain;
+  margin: 1rem auto;
+  display: block;
+}
+
+.project-img {
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
 }
