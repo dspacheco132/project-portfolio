@@ -36,19 +36,6 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Merit Jolera",
-    description:
-      "Website for a fictional company, built with Next.js and Tailwind CSS.",
-    image: merit_jolera,
-    tags: ["Next.js", "Tailwind CSS", "React", "Typescript"],
-    link: "https://github.com/diogopacheco/merit-jolera",
-    date: "2023-10-20",
-    longDescription: "A modern corporate website built with Next.js and Tailwind CSS. Features responsive design, dynamic content management, and performance optimizations.",
-    liveUrl: "https://merit-jolera.example.com",
-    githubUrl: "https://github.com/diogopacheco/merit-jolera",
-  },
-  {
-    id: "3",
     title: "Terraform Infrastructure Project",
     description:
       "AWS infrastructure setup with Terraform, creating an Ubuntu EC2 instance with proper security configuration.",
@@ -60,7 +47,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/diogopacheco/terraform-project",
   },
   {
-    id: "4",
+    id: "3",
     title: "Kubernetes Web Server",
     description:
       "NGINX web server running in a Kubernetes cluster with Minikube, including ConfigMap and Ingress.",
@@ -72,7 +59,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/diogopacheco/kubernetes-webserver",
   },
   {
-    id: "5",
+    id: "4",
     title: "Docker Cleanup Script",
     description:
       "A comprehensive shell script for cleaning up Docker environments.",
