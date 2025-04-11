@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
@@ -17,7 +18,12 @@ const Header = () => {
             </li>
             <li>
               <Link to="/projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Projetos
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Resume
               </Link>
             </li>
           </ul>

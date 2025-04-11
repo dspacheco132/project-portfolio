@@ -5,15 +5,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-100 border-t border-gray-200">
+    <footer className="bg-gray-100 border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <Link to="/" className="text-xl font-bold text-gray-800">
+            <Link to="/" className="text-xl font-bold text-gray-800 dark:text-white">
               Diogo<span className="text-blue-600">Pacheco</span>
             </Link>
-            <p className="text-gray-600 mt-2">
-              O meu portfólio de projetos e trabalhos
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              My portfolio of projects and work
             </p>
           </div>
           <div className="flex space-x-6">
@@ -21,7 +21,7 @@ const Footer = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/diogo-pacheco-1a280a264"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +64,8 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-6 text-center text-gray-500 text-sm">
-          &copy; {currentYear} Diogo Pacheco. Todos os direitos reservados.
+        <div className="mt-8 border-t border-gray-200 dark:border-gray-800 pt-6 text-center text-gray-500 text-sm dark:text-gray-400">
+          &copy; {currentYear} Diogo Pacheco. All rights reserved.
         </div>
       </div>
     </footer>

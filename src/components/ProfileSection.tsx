@@ -50,7 +50,7 @@ const ProfileSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              20 anos
+              20 years old
             </motion.p>
             <motion.p 
               className="text-gray-700 dark:text-gray-300 max-w-2xl mb-6"
@@ -58,9 +58,9 @@ const ProfileSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Desenvolvedor apaixonado por tecnologia com experiência em Oracle Cloud, 
-              AWS, Terraform, Docker, e diversas outras tecnologias. Meu foco é criar 
-              soluções técnicas eficientes e inovadoras.
+              Developer passionate about technology with experience in Oracle Cloud, 
+              AWS, Terraform, Docker, and various other technologies. My focus is creating 
+              efficient and innovative technical solutions.
             </motion.p>
             
             <motion.div 

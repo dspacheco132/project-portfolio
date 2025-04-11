@@ -12,9 +12,9 @@ const Project = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Project Not Found</h1>
-        <p className="text-gray-600 mb-8">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Project Not Found</h1>
+        <p className="text-gray-600 dark:text-gray-300 mb-8">
           The project you're looking for doesn't exist or has been removed.
         </p>
         <Link
@@ -28,16 +28,16 @@ const Project = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:bg-gray-900 transition-colors duration-300">
       <Header />
       
       <main className="flex-grow">
         {/* Project Header */}
-        <div className="bg-gradient-to-b from-white to-gray-50 py-12">
+        <div className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-12 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <button
               onClick={() => navigate(-1)}
-              className="inline-flex items-center text-gray-600 hover:text-blue-600 mb-8 transition-colors"
+              className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors"
             >
               <ArrowLeft className="h-4 w-4 mr-2" /> Back
             </button>
@@ -47,16 +47,16 @@ const Project = () => {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
+                    className="text-sm px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
               
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h1>
               
-              <div className="flex items-center text-gray-600 mb-8">
+              <div className="flex items-center text-gray-600 dark:text-gray-300 mb-8">
                 <Calendar className="h-5 w-5 mr-2" />
                 <span>{project.date}</span>
               </div>
@@ -67,7 +67,7 @@ const Project = () => {
         {/* Project Image */}
         <div className="container mx-auto px-4 -mt-8">
           <div className="max-w-4xl mx-auto">
-            <div className="h-96 bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+            <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg">
               <img
                 src={project.image}
                 alt={project.title}
@@ -80,13 +80,13 @@ const Project = () => {
         {/* Project Content */}
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg mx-auto">
-              <p className="text-xl text-gray-700 mb-8">
+            <div className="prose prose-lg dark:prose-invert mx-auto">
+              <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
                 {project.description}
               </p>
               
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Project Overview</h2>
-              <p className="text-gray-700 mb-12 whitespace-pre-line">
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Project Overview</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-12 whitespace-pre-line">
                 {project.longDescription}
               </p>
               
