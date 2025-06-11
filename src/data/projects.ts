@@ -75,7 +75,7 @@ export const projects: Project[] = [
     title: "S3 LocalStack",
     description:
       "Local AWS S3 simulation using LocalStack for development and testing purposes.",
-    image: "/s3-localstack.png",
+    image: "https://s3.swift-ai.pt/imagens/localstack.png",
     tags: ["AWS", "S3", "LocalStack", "Docker", "Development"],
     link: "https://github.com/dspacheco132/s3-local-stack.git",
     date: "2024-03-20",
