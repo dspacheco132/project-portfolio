@@ -78,7 +78,7 @@ export const projects: Project[] = [
     image: "https://s3.swift-ai.pt/imagens/localstack.png",
     tags: ["AWS", "S3", "LocalStack", "Docker", "Development"],
     link: "https://github.com/dspacheco132/s3-local-stack.git",
-    date: "2024-03-20",
+    date: "2025-06-11",
     longDescription: "This project demonstrates how to set up and use LocalStack to simulate AWS S3 services locally. It includes Docker configuration, S3 bucket operations, and examples of how to interact with the local S3 service for development and testing without incurring AWS costs.",
     githubUrl: "https://github.com/dspacheco132/s3-local-stack.git",
   },
