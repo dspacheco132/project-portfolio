@@ -70,6 +70,18 @@ export const projects: Project[] = [
     longDescription: "A comprehensive shell script for cleaning up Docker environments, offering selective removal of containers, images, volumes, networks, and system resources. Features include color-coded interactive menu, visual progress indicators, safety checks, and system pruning options.",
     githubUrl: "https://github.com/dspacheco132/clean-docker.git",
   },
+  {
+    id: "5",
+    title: "S3 LocalStack",
+    description:
+      "Local AWS S3 simulation using LocalStack for development and testing purposes.",
+    image: "https://s3.swift-ai.pt/imagens/localstack.png",
+    tags: ["AWS", "S3", "LocalStack", "Docker", "Development"],
+    link: "https://github.com/dspacheco132/s3-local-stack.git",
+    date: "2024-03-20",
+    longDescription: "This project demonstrates how to set up and use LocalStack to simulate AWS S3 services locally. It includes Docker configuration, S3 bucket operations, and examples of how to interact with the local S3 service for development and testing without incurring AWS costs.",
+    githubUrl: "https://github.com/dspacheco132/s3-local-stack.git",
+  },
 ];
 
 // Add this new function to get a project by ID
