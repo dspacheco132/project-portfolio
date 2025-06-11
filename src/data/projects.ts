@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "Docker Cleanup Script",
     description:
       "A comprehensive shell script for cleaning up Docker environments.",
-    image: docker_cleanup,
+    image: "https://s3.swift-ai.pt/imagens/dockercleanup.png",
     tags: ["Docker", "Shell Script", "DevOps", "System Administration"],
     link: "https://github.com/dspacheco132/clean-docker.git",
     date: "2025-11-10",
