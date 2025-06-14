@@ -166,9 +166,14 @@ export const projects: Project[] = [
         url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
         alt: "Login screen of RFIDConnect"
       },
+      // SUBSTITUIÇÃO DOS CARTÕES:
       {
-        url: "/lovable-uploads/14c858f3-077f-4dad-a0b1-711667106e62.png",
-        alt: "RFIDConnect student RFID card"
+        url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
+        alt: "RFIDConnect student RFID card (front side)"
+      },
+      {
+        url: "/lovable-uploads/738af04b-08ff-480f-a1a2-147323b5e46e.png",
+        alt: "RFIDConnect student RFID card (back side)"
       },
       {
         url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
