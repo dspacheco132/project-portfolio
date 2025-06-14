@@ -19,10 +19,10 @@ const ProfileSection = () => {
   ];
 
   const stats = [
-    { icon: Code, label: "Projetos", value: "15+" },
-    { icon: Award, label: "Certificações", value: "8" },
-    { icon: Users, label: "Colaborações", value: "25+" },
-    { icon: Coffee, label: "Cafés tomados", value: "∞" },
+    { icon: Code, label: "Projects", value: "15+" },
+    { icon: Award, label: "Certifications", value: "8" },
+    { icon: Users, label: "Collaborations", value: "25+" },
+    { icon: Coffee, label: "Coffees consumed", value: "∞" },
   ];
 
   return (
@@ -69,10 +69,10 @@ const ProfileSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Sou uma pessoa focada e prática com paixão por resolver problemas.
-              Valorizo o aprendizado contínuo e o trabalho em equipe para alcançar resultados objetivos e relevantes.
-              Atualmente estudando Cibersegurança com experiência em Oracle Cloud, OAuth, Tailscale,
-              e várias outras tecnologias.
+              I am a focused and practical person with a passion for solving problems.
+              I value continuous learning and teamwork to achieve objective and relevant results.
+              Currently studying Cybersecurity with experience in Oracle Cloud, OAuth, Tailscale,
+              and various other technologies.
             </motion.p>
             
             {/* Stats Section */}

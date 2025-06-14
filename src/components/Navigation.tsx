@@ -9,11 +9,11 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { name: "Início", href: "/", icon: Home },
-    { name: "Sobre", href: "#sobre", icon: User },
-    { name: "Projetos", href: "/projects", icon: Briefcase },
-    { name: "Currículo", href: "/resume", icon: FileText },
-    { name: "Contato", href: "#contato", icon: Mail },
+    { name: "Home", href: "/", icon: Home },
+    { name: "About", href: "#about", icon: User },
+    { name: "Projects", href: "/projects", icon: Briefcase },
+    { name: "Resume", href: "/resume", icon: FileText },
+    { name: "Contact", href: "#contact", icon: Mail },
   ];
 
   useEffect(() => {
