@@ -9,19 +9,13 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const isRFIDConnect = project.title === "RFIDConnect";
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
-      <div className="h-48 bg-gray-200 relative flex items-center justify-center">
+      <div className="h-48 bg-gray-200 relative">
         <img
           src={project.image}
           alt={project.title}
-          className={
-            isRFIDConnect
-              ? "max-h-40 max-w-[90%] object-contain mx-auto my-2"
-              : "w-full h-full object-contain"
-          }
-          style={isRFIDConnect ? { background: "white" } : undefined}
+          className="w-full h-full object-cover"
         />
       </div>
       <CardHeader className="pb-2">
