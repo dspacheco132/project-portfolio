@@ -136,6 +136,18 @@ export const projects: Project[] = [
     longDescription: "This project showcases a complete microservices architecture implementation with service discovery, load balancing, and inter-service communication. It includes containerized services, orchestration with Kubernetes, and monitoring capabilities for production-ready applications.",
     githubUrl: "https://github.com/dspacheco132/microservices-architecture",
   },
+  {
+    id: "11",
+    title: "RFIDConnect",
+    description:
+      "Sistema de registo de presenças automático com tecnologia RFID para gestão escolar.",
+    image: "/lovable-uploads/91a5fed6-9b45-4f19-9e42-aae2adecb239.png",
+    tags: ["RFID", "Registo de Presença", "IoT", "Python", "Flask", "MySQL", "Automação", "PAP"],
+    date: "2024-06-14",
+    longDescription:
+      "O RFIDConnect é um sistema desenvolvido para automatizar o registo de presenças em salas de aula utilizando cartões e leitores RFID. A solução permite gerir e monitorizar a presença dos alunos de forma prática e segura. Com interface web desenvolvida em Flask, integração a base de dados MySQL, hardware embarcado com leitores de RFID e relatórios automáticos, o sistema torna a gestão escolar mais eficiente e reduz a burocracia.",
+    githubUrl: "https://github.com/seu-usuario/rfidconnect", // Atualize para o repositório correto se necessário
+  },
 ];
 
 // Add this new function to get a project by ID
