@@ -1,4 +1,3 @@
-
 // Replace StaticImageData with string since we don't want to use next/image
 export type Project = {
   id: string;
@@ -95,14 +94,14 @@ export const projects: Project[] = [
   },
   {
     id: "7",
-    title: "Python Data Analysis Tool",
+    title: "AWS Lambda Automation",
     description:
-      "A comprehensive data analysis tool built with Python, Pandas, and Matplotlib for processing and visualizing datasets.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    tags: ["Python", "Pandas", "Matplotlib", "Data Analysis", "Visualization"],
-    date: "2024-08-20",
-    longDescription: "This tool provides comprehensive data analysis capabilities including data cleaning, statistical analysis, and visualization. It supports multiple file formats, generates detailed reports, and creates interactive charts and graphs for better data understanding.",
-    githubUrl: "https://github.com/dspacheco132/python-data-analysis",
+      "Automate tasks and workflows using AWS Lambda, triggering serverless functions based on various AWS events.",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7", // Unsplash AWS theme placeholder
+    tags: ["AWS", "Lambda", "Serverless", "Automation", "Cloud"],
+    date: "2025-03-02",
+    longDescription: "This project demonstrates how to use AWS Lambda for automating event-driven architectures within AWS. It includes sample triggers from S3, DynamoDB, and custom CloudWatch Events, empowering efficient, scalable automation without server management.",
+    githubUrl: "https://github.com/dspacheco132/aws-lambda-automation",
   },
   {
     id: "8",
