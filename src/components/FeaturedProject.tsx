@@ -10,13 +10,19 @@ interface FeaturedProjectProps {
 }
 
 const FeaturedProject = ({ project }: FeaturedProjectProps) => {
+  const isRFIDConnect = project.title === "RFIDConnect";
   return (
     <Card className="overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 h-full flex flex-col">
-      <div className="h-48 bg-gray-200 relative overflow-hidden">
+      <div className="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+          className={
+            isRFIDConnect 
+              ? "max-h-40 max-w-[90%] object-contain mx-auto my-2"
+              : "w-full h-full object-contain object-center hover:scale-105 transition-transform duration-300"
+          }
+          style={isRFIDConnect ? { background: "white" } : undefined}
         />
       </div>
       <CardContent className="p-6 flex flex-col justify-between flex-grow">
