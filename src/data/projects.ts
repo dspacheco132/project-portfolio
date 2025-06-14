@@ -142,7 +142,7 @@ export const projects: Project[] = [
     title: "RFIDConnect",
     description:
       "Automated attendance registration system using RFID technology for schools.",
-    image: "/lovable-uploads/4c0613a2-e128-416e-9328-bbde15242cc9.png", // updated to high quality logo
+    image: "/lovable-uploads/1f638540-3c8a-4838-ae54-8b6e7be1ccaf.png", // atualizada para a imagem real do protótipo
     tags: [
       "RFID",
       "Attendance",
