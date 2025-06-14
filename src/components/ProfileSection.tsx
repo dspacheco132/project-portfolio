@@ -1,4 +1,3 @@
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { User, Code, Award, Users, Coffee } from "lucide-react";
@@ -21,7 +20,7 @@ const ProfileSection = () => {
   const stats = [
     { icon: Code, label: "Projects", value: "15+" },
     { icon: Award, label: "Certifications", value: "8" },
-    { icon: Users, label: "Collaborations", value: "25+" },
+    { icon: Users, label: "Team Projects", value: "10+" },
     { icon: Coffee, label: "Coffees consumed", value: "∞" },
   ];
 
