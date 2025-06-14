@@ -1,9 +1,11 @@
-
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Globe, Github, Calendar } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getProjectById } from "../data/projects";
+
+// Helper type for extraImages (optional field)
+type ExtraImage = { url: string; alt?: string };
 
 const Project = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,10 +29,13 @@ const Project = () => {
     );
   }
 
+  // RFIDConnect gallery (use only if extraImages exists for this project)
+  const extraImages: ExtraImage[] = (project as any).extraImages || [];
+
   return (
     <div className="min-h-screen flex flex-col dark:bg-gray-900 transition-colors duration-300">
       <Header />
-      
+
       <main className="flex-grow">
         {/* Project Header */}
         <div className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-12 transition-colors duration-300">
@@ -41,7 +46,7 @@ const Project = () => {
             >
               <ArrowLeft className="h-4 w-4 mr-2" /> Back
             </button>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-wrap gap-3 mb-4">
                 {project.tags.map((tag) => (
@@ -53,9 +58,9 @@ const Project = () => {
                   </span>
                 ))}
               </div>
-              
+
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h1>
-              
+
               <div className="flex items-center text-gray-600 dark:text-gray-300 mb-8">
                 <Calendar className="h-5 w-5 mr-2" />
                 <span>{project.date}</span>
@@ -63,7 +68,7 @@ const Project = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Project Image */}
         <div className="container mx-auto px-4 -mt-8">
           <div className="max-w-4xl mx-auto">
@@ -74,9 +79,34 @@ const Project = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            {/* RFIDConnect Gallery */}
+            {extraImages.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-200">
+                  Screenshots & App Views
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {extraImages.map((img, idx) => (
+                    <div key={img.url} className="rounded-lg bg-gray-100 dark:bg-gray-800 p-2 shadow hover:shadow-lg transition-shadow">
+                      <img
+                        src={img.url}
+                        alt={img.alt || "RFIDConnect screenshot"}
+                        className="w-full h-64 object-contain object-center rounded-lg"
+                        loading="lazy"
+                      />
+                      {img.alt && (
+                        <div className="mt-2 text-xs text-center text-gray-600 dark:text-gray-300">
+                          {img.alt}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        
+
         {/* Project Content */}
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
@@ -84,12 +114,12 @@ const Project = () => {
               <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
                 {project.description}
               </p>
-              
+
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Project Overview</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-12 whitespace-pre-line">
                 {project.longDescription}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 {project.liveUrl && (
                   <a
@@ -102,7 +132,7 @@ const Project = () => {
                     View Live Site
                   </a>
                 )}
-                
+
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}

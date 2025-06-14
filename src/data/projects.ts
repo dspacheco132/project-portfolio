@@ -10,6 +10,7 @@ export type Project = {
   longDescription?: string; // Add longDescription field
   liveUrl?: string; // Add liveUrl field
   githubUrl?: string; // Add githubUrl field
+  extraImages?: { url: string; alt?: string }[];
 };
 
 // images
@@ -140,13 +141,40 @@ export const projects: Project[] = [
     id: "11",
     title: "RFIDConnect",
     description:
-      "Sistema de registo de presenças automático com tecnologia RFID para gestão escolar.",
+      "Automated attendance registration system using RFID technology for schools.",
     image: "/lovable-uploads/91a5fed6-9b45-4f19-9e42-aae2adecb239.png",
-    tags: ["RFID", "Registo de Presença", "IoT", "Python", "Flask", "MySQL", "Automação", "PAP"],
+    tags: [
+      "RFID",
+      "Attendance",
+      "IoT",
+      "Python",
+      "Flask",
+      "MySQL",
+      "Automation",
+      "PAP"
+    ],
     date: "2024-06-14",
     longDescription:
-      "O RFIDConnect é um sistema desenvolvido para automatizar o registo de presenças em salas de aula utilizando cartões e leitores RFID. A solução permite gerir e monitorizar a presença dos alunos de forma prática e segura. Com interface web desenvolvida em Flask, integração a base de dados MySQL, hardware embarcado com leitores de RFID e relatórios automáticos, o sistema torna a gestão escolar mais eficiente e reduz a burocracia.",
-    githubUrl: "https://github.com/seu-usuario/rfidconnect", // Atualize para o repositório correto se necessário
+      "RFIDConnect is a system developed to automate the attendance registration in classrooms using RFID cards and readers. The solution allows the management and monitoring of student attendance in a practical and secure way. It features a web interface built with Flask, MySQL integration, embedded hardware with RFID readers, and automated reports, making school management more efficient and reducing bureaucracy.",
+    githubUrl: "https://github.com/seu-usuario/rfidconnect",
+    extraImages: [
+      {
+        url: "/lovable-uploads/2f821fa2-8ff4-4f14-9690-f5bdacfbaf9e.png",
+        alt: "Dashboard screen of RFIDConnect web app"
+      },
+      {
+        url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
+        alt: "Login screen of RFIDConnect"
+      },
+      {
+        url: "/lovable-uploads/14c858f3-077f-4dad-a0b1-711667106e62.png",
+        alt: "RFIDConnect student RFID card"
+      },
+      {
+        url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
+        alt: "Design screens and Figma prototypes of RFIDConnect"
+      }
+    ]
   },
 ];
 
