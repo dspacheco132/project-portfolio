@@ -7,8 +7,9 @@ import ScrollToTop from "../components/ScrollToTop";
 import { projects } from "../data/projects";
 
 const Index = () => {
-  // Get the first 3 projects for featured section
-  const featuredProjects = projects.slice(0, 3);
+  // Get specific projects for featured section
+  const featuredProjectIds = ["5", "9", "10"]; // S3 LocalStack, CI/CD Pipeline, Microservices Architecture
+  const featuredProjects = projects.filter(project => featuredProjectIds.includes(project.id));
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
