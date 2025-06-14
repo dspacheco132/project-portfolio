@@ -166,7 +166,6 @@ export const projects: Project[] = [
         url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
         alt: "Login screen of RFIDConnect"
       },
-      // SUBSTITUIÇÃO DOS CARTÕES:
       {
         url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
         alt: "RFIDConnect student RFID card (front side)"
@@ -178,6 +177,23 @@ export const projects: Project[] = [
       {
         url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
         alt: "Design screens and Figma prototypes of RFIDConnect"
+      },
+      // Nova seção: Fotos da maquete
+      {
+        url: "/lovable-uploads/0ba84c08-0d5f-4bbd-882f-e22241e78ec4.png",
+        alt: "RFIDConnect prototype with student card and LCD display"
+      },
+      {
+        url: "/lovable-uploads/a8a44476-cb38-4721-bd35-c4f351b9d99d.png",
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: "/lovable-uploads/60174354-556d-45e2-a487-bf09597af50a.png",
+        alt: "RFIDConnect hardware wiring and components inside the prototype"
+      },
+      {
+        url: "/lovable-uploads/78e27671-2f3b-4b05-8ff9-860cdcbe9fff.png",
+        alt: "RFIDConnect LCD displaying a welcome message"
       }
     ]
   },
