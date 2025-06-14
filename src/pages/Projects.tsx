@@ -1,8 +1,9 @@
 
 import { useState } from "react";
-import Header from "../components/Header";
+import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
+import ScrollToTop from "../components/ScrollToTop";
 import { projects } from "../data/projects";
 
 const Projects = () => {
@@ -14,10 +15,10 @@ const Projects = () => {
     : projects.filter(project => project.tags.includes(filter));
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
+      <Navigation />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         {/* Projects Header */}
         <section className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-16 transition-colors duration-300">
           <div className="container mx-auto px-4">
@@ -79,7 +80,7 @@ const Projects = () => {
                 </p>
                 <button
                   onClick={() => setFilter("all")}
-                  className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                  className="mt-6 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
                   Show All Projects
                 </button>
@@ -90,6 +91,7 @@ const Projects = () => {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
