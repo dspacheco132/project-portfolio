@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin } from "lucide-react";
+import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin, ExternalLink } from "lucide-react";
 
 const Resume = () => {
   const skills = [
@@ -43,11 +43,85 @@ const Resume = () => {
   ];
 
   const certifications = [
-    "CyberOps Associate",
-    "CCNA: Introduction to Networks",
-    "GDPR for Attentive Citizens",
-    "Cybersecurity Citizen",
-    "CCNA: Switching, Routing, and Wireless Essentials"
+    {
+      name: "Cisco Certified Network Associate (CCNA)",
+      issuer: "Cisco",
+      date: "28/04/2025 – 28/04/2028",
+      description: "CCNA Exam v1.1 (CCNA 200-301) is a 120-minute exam associated with the CCNA certification. This exam tests a candidate's knowledge and skills related to network fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation and programmability.",
+      link: "https://www.credly.com/badges/0a543b66-5714-4427-9cab-8b9b4a7aaf78/public_url"
+    },
+    {
+      name: "Cisco Certified Cybersecurity Associate (CyberOps)",
+      issuer: "Cisco",
+      date: "Valid until renewal",
+      description: "This certification validates the skills required of associate-level cyber security analysts within security operations centers.",
+      link: "https://www.credly.com/badges/046d471d-c164-4605-8c13-c6395cda5b9a/linked_in_profile"
+    },
+    {
+      name: "AWS Academy Graduate - AWS Academy Cloud Architecting",
+      issuer: "Amazon Web Services",
+      date: "29/04/2025",
+      description: "Earners of this badge have successfully completed the AWS Academy Cloud Architecting course, demonstrating foundational knowledge in designing scalable, highly available, and fault-tolerant applications on Amazon Web Services (AWS). They understand core AWS services and best practices for cloud architecture.",
+      link: "https://www.credly.com/badges/7db1dcf2-d42e-4c69-ad1f-651b6a2986ab"
+    },
+    {
+      name: "AWS Educate Getting Started with Compute",
+      issuer: "Amazon Web Services",
+      date: "Completed",
+      description: "Successfully completed AWS's 'Getting Started with Compute' training, demonstrating foundational knowledge in various compute types and practical ability to create compute instances using Amazon EC2. This badge validates understanding of core concepts and application of AWS compute services.",
+      link: "https://www.credly.com/badges/f866e51c-e364-4d3a-b8ea-f82d93949d70/linked_in_profile"
+    },
+    {
+      name: "Ethical Hacker",
+      issuer: "Cisco",
+      date: "Completed",
+      description: "Successfully completed the Cisco Ethical Hacker course, demonstrating a broad understanding of legal and compliance requirements in cybersecurity. Proficient in scoping, executing, and reporting vulnerability assessments, as well as recommending mitigation strategies. Gained hands-on experience through 34 practical activities using tools like Kali Linux and WebSploit.",
+      link: "https://www.credly.com/badges/20847fdd-2bbf-4fc4-a64c-7f3b7ed53ef9/linked_in_profile"
+    },
+    {
+      name: "CCNA: Introduction to Networks",
+      issuer: "Cisco",
+      date: "Completed",
+      description: "Cisco verifies the earner successfully completed the Introduction to Networks course and achieved this student level credential. Earner has knowledge of networking including IP addressing, how physical, data link protocols support Ethernet, can configure connectivity between switches, routers and end devices. Participated in up to 54 labs and accumulated up to 14 hours of hands-on labs using Cisco hardware or Packet Tracer tool.",
+      link: "https://www.credly.com/badges/8eb28c1e-10a3-46ba-aeac-242ddcb60849/public_url"
+    },
+    {
+      name: "CCNA: Switching, Routing, and Wireless Essentials",
+      issuer: "Cisco",
+      date: "Completed",
+      description: "Successfully completed the Switching, Routing, and Wireless Essentials course. The earner has a foundation in switching operations, wired and wireless LAN configuration using security best practices, redundancy protocols, and developed problem solving skills. Participated in up to 45 practice activities and accumulated up to 21 hours of hands-on labs using Cisco hardware and/or the Cisco Packet Tracer tool.",
+      link: "https://www.credly.com/badges/d285701e-7214-41e5-8466-cf47a7704a20/public_url"
+    },
+    {
+      name: "CCNA: Enterprise Networking, Security, and Automation",
+      issuer: "Cisco",
+      date: "Completed",
+      description: "Successfully completed the Enterprise Networking, Security and Automation course. The earner has a foundation in scalable network architectures, dynamic routing, mitigation of security threats, wide-area networks, virtualization, automation of programmable networks. Participated in up to 41 lab activities and accumulated up to 15 hours of hands-on labs using Cisco hardware and/or Cisco Packet Tracer tool.",
+      link: "https://www.credly.com/badges/b9b0e484-9124-45bb-a1bb-8718ffb526b7/public_url"
+    },
+    {
+      name: "CVE Series: Apache Spark (CVE-2022-33891)",
+      issuer: "Security Training",
+      date: "Completed",
+      description: "Demonstrated understanding of critical vulnerabilities in big data platforms, specifically the high-severity command injection vulnerability (CVE-2022-33891) in Apache Spark. This includes knowledge of how a malicious user can exploit the Spark UI (when ACLs are enabled) to impersonate users and execute arbitrary shell commands, impacting system integrity and confidentiality.",
+      link: null
+    },
+    {
+      name: "CyberSecure Citizen",
+      issuer: "Security Awareness",
+      date: "Completed",
+      description: "Completed cybersecurity awareness training focused on digital citizenship and security best practices.",
+      link: null
+    }
+  ];
+
+  const inProgress = [
+    {
+      name: "AWS Solutions Architect - Associate Certification",
+      issuer: "Amazon Web Services",
+      description: "Actively studying and gaining hands-on experience with AWS services to prepare for the certification exam.",
+      status: "In Progress"
+    }
   ];
 
   const awards = [
@@ -111,32 +185,32 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
       <Header />
       
       <main className="flex-grow py-16">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Resume</h1>
-            <div className="flex flex-col md:flex-row gap-6 text-gray-600">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Resume</h1>
+            <div className="flex flex-col md:flex-row gap-6 text-gray-600 dark:text-gray-300">
               <div className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-blue-600" />
+                <Mail className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
                 <span>diogosilvapalcheco@enta.pt</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                <MapPin className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
                 <span>Ponta Delgada, Portugal</span>
               </div>
               <div className="flex items-center">
-                <Linkedin className="h-5 w-5 mr-2 text-blue-600" />
-                <a href="https://www.linkedin.com/in/diogo-pacheco-1a280a264/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                <Linkedin className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
+                <a href="https://www.linkedin.com/in/diogo-pacheco-1a280a264/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   LinkedIn
                 </a>
               </div>
               <div className="flex items-center">
-                <Github className="h-5 w-5 mr-2 text-blue-600" />
-                <a href="https://github.com/Swift132" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                <Github className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
+                <a href="https://github.com/Swift132" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   GitHub
                 </a>
               </div>
@@ -150,10 +224,10 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
               Summary
             </h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               I am Diogo Pacheco, a focused, practical person with a passion for problem-solving. 
               I value continuous learning and teamwork to achieve objective and relevant results.
               Currently studying Cybersecurity at ENTA (Escola de Novas Tecnologias dos Açores).
@@ -167,13 +241,13 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
               Key Skills
             </h2>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <motion.div key={index} variants={item}>
-                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 px-3 py-1.5 text-sm">
+                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800 px-3 py-1.5 text-sm">
                     {skill}
                   </Badge>
                 </motion.div>
@@ -188,8 +262,8 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Briefcase className="h-6 w-6 mr-2 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <Briefcase className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
               Work Experience
             </h2>
             
@@ -197,23 +271,23 @@ const Resume = () => {
               {experiences.map((experience, index) => (
                 <motion.div 
                   key={index} 
-                  className="border-l-2 border-blue-600 pl-6 relative"
+                  className="border-l-2 border-blue-600 dark:border-blue-400 pl-6 relative"
                   variants={item}
                 >
-                  <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-[7px] top-2"></div>
-                  <h3 className="text-xl font-bold text-gray-900">{experience.title}</h3>
+                  <div className="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full -left-[7px] top-2"></div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{experience.title}</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <p className="text-gray-800 font-medium">{experience.company}</p>
-                    <div className="flex items-center text-gray-600">
+                    <p className="text-gray-800 dark:text-gray-200 font-medium">{experience.company}</p>
+                    <div className="flex items-center text-gray-600 dark:text-gray-400">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{experience.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-3 flex items-center">
+                  <p className="text-gray-600 dark:text-gray-400 mb-3 flex items-center">
                     <MapPin className="h-4 w-4 mr-1" />
                     {experience.location}
                   </p>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
                     {experience.description.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
@@ -230,8 +304,8 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <GraduationCap className="h-6 w-6 mr-2 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <GraduationCap className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
               Education
             </h2>
             
@@ -239,19 +313,19 @@ const Resume = () => {
               {education.map((edu, index) => (
                 <motion.div 
                   key={index} 
-                  className="border-l-2 border-blue-600 pl-6 relative"
+                  className="border-l-2 border-blue-600 dark:border-blue-400 pl-6 relative"
                   variants={item}
                 >
-                  <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-[7px] top-2"></div>
-                  <h3 className="text-xl font-bold text-gray-900">{edu.degree}</h3>
+                  <div className="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full -left-[7px] top-2"></div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{edu.degree}</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <p className="text-gray-800 font-medium">{edu.institution}</p>
-                    <div className="flex items-center text-gray-600">
+                    <p className="text-gray-800 dark:text-gray-200 font-medium">{edu.institution}</p>
+                    <div className="flex items-center text-gray-600 dark:text-gray-400">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{edu.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700">{edu.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{edu.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -264,21 +338,68 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <Award className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
               Certifications
             </h2>
             
-            <div className="space-y-2">
+            <div className="space-y-6">
               {certifications.map((cert, index) => (
                 <motion.div 
                   key={index} 
-                  className="flex items-center"
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
                   variants={item}
                 >
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                  <p className="text-gray-700">{cert}</p>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{cert.name}</h3>
+                      <p className="text-gray-700 dark:text-gray-300 font-medium">{cert.issuer}</p>
+                    </div>
+                    <div className="flex items-center gap-4 mt-2 sm:mt-0">
+                      <div className="flex items-center text-gray-600 dark:text-gray-400">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        <span className="text-sm">{cert.date}</span>
+                      </div>
+                      {cert.link && (
+                        <a 
+                          href={cert.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{cert.description}</p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* In Progress Section */}
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Currently Pursuing</h3>
+              <div className="space-y-4">
+                {inProgress.map((cert, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800"
+                    variants={item}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                      <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white">{cert.name}</h4>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm">{cert.issuer}</p>
+                      </div>
+                      <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200 mt-2 sm:mt-0 w-fit">
+                        {cert.status}
+                      </Badge>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">{cert.description}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.section>
           
@@ -289,8 +410,8 @@ const Resume = () => {
             initial="hidden"
             animate="show"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Award className="h-6 w-6 mr-2 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+              <Award className="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" />
               Awards & Achievements
             </h2>
             
@@ -298,7 +419,7 @@ const Resume = () => {
               {awards.map((award, index) => (
                 <motion.div 
                   key={index} 
-                  className="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100"
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700"
                   variants={item}
                 >
                   {award.image && (
@@ -310,15 +431,15 @@ const Resume = () => {
                       />
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{award.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{award.title}</h3>
                   <div className="flex items-center justify-between mb-3">
-                    <p className="text-gray-700 font-medium">{award.organization}</p>
-                    <div className="flex items-center text-gray-600">
+                    <p className="text-gray-700 dark:text-gray-300 font-medium">{award.organization}</p>
+                    <div className="flex items-center text-gray-600 dark:text-gray-400">
                       <Calendar className="h-4 w-4 mr-1" />
                       <span>{award.year}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700">{award.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{award.description}</p>
                 </motion.div>
               ))}
             </div>
