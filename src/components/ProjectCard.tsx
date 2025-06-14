@@ -11,11 +11,12 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
-      <div className="h-48 bg-gray-200 relative">
+      <div className="h-48 bg-gray-200 relative flex items-center justify-center">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-center"
+          style={{ maxHeight: "100%", maxWidth: "100%" }}
         />
       </div>
       <CardHeader className="pb-2">
@@ -56,3 +57,4 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 };
 
 export default ProjectCard;
+
