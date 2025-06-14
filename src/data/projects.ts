@@ -142,7 +142,7 @@ export const projects: Project[] = [
     title: "RFIDConnect",
     description:
       "Automated attendance registration system using RFID technology for schools.",
-    image: "/lovable-uploads/0ba84c08-0d5f-4bbd-882f-e22241e78ec4.png", // updated to prototype with LCD display and card
+    image: "/lovable-uploads/4c0613a2-e128-416e-9328-bbde15242cc9.png", // updated to high quality logo
     tags: [
       "RFID",
       "Attendance",
@@ -178,7 +178,7 @@ export const projects: Project[] = [
         url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
         alt: "Design screens and Figma prototypes of RFIDConnect"
       },
-      // Nova seção: Fotos da maquete
+      // Maquete/fotos reais do hardware
       {
         url: "/lovable-uploads/0ba84c08-0d5f-4bbd-882f-e22241e78ec4.png",
         alt: "RFIDConnect prototype with student card and LCD display"
