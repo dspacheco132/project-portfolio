@@ -1,11 +1,14 @@
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin, ExternalLink, X } from "lucide-react";
 
 const Resume = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const skills = [
     "Oracle Cloud", "OAuth", "Tailscale", "Python", 
     "JavaScript", "React", "Docker", "Kubernetes", "Git", "CI/CD", "Linux",
@@ -49,6 +52,13 @@ const Resume = () => {
       date: "28/04/2025 – 28/04/2028",
       description: "CCNA Exam v1.1 (CCNA 200-301) is a 120-minute exam associated with the CCNA certification. This exam tests a candidate's knowledge and skills related to network fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation and programmability.",
       link: "https://www.credly.com/badges/0a543b66-5714-4427-9cab-8b9b4a7aaf78/public_url"
+    },
+    {
+      name: "AWS Solutions Architect - Associate",
+      issuer: "Amazon Web Services",
+      date: "Completed",
+      description: "AWS Solutions Architect Associate certification validates the ability to design and deploy scalable, highly available, and fault-tolerant systems on AWS. Demonstrates expertise in AWS services, security, and best practices for cloud architecture.",
+      link: "https://www.credly.com/badges/890afde7-8cfa-433e-927f-eff02e3c5456/public_url"
     },
     {
       name: "Cisco Certified Cybersecurity Associate (CyberOps)",
@@ -116,12 +126,7 @@ const Resume = () => {
   ];
 
   const inProgress = [
-    {
-      name: "AWS Solutions Architect - Associate Certification",
-      issuer: "Amazon Web Services",
-      description: "Actively studying and gaining hands-on experience with AWS services to prepare for the certification exam.",
-      status: "In Progress"
-    }
+    // Currently no certifications in progress
   ];
 
   const awards = [
@@ -196,7 +201,7 @@ const Resume = () => {
             <div className="flex flex-col md:flex-row gap-6 text-gray-600 dark:text-gray-300">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
-                <span>diogosilvapalcheco@enta.pt</span>
+                <span>diogopacheco132@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
@@ -423,7 +428,10 @@ const Resume = () => {
                   variants={item}
                 >
                   {award.image && (
-                    <div className="mb-4 h-48 overflow-hidden rounded-md">
+                    <div 
+                      className="mb-4 h-48 overflow-hidden rounded-md cursor-pointer transform transition-transform duration-200 hover:scale-105"
+                      onClick={() => setSelectedImage(award.image)}
+                    >
                       <img 
                         src={award.image} 
                         alt={award.title} 
@@ -444,6 +452,40 @@ const Resume = () => {
               ))}
             </div>
           </motion.section>
+
+          {/* Image Modal */}
+          <AnimatePresence>
+            {selectedImage && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+                onClick={() => setSelectedImage(null)}
+              >
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  className="relative max-w-4xl max-h-[90vh] bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setSelectedImage(null)}
+                    className="absolute top-4 right-4 z-10 p-2 bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full text-white transition-colors duration-200"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                  <img
+                    src={selectedImage}
+                    alt="Award"
+                    className="w-full h-full object-contain max-h-[80vh]"
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </main>
 
