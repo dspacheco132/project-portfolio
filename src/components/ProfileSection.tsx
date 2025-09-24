@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const ProfileSection = () => {
   const skills = [
+    { name: "AWS Cloud", color: "bg-yellow-100 text-yellow-800 hover:bg-yellow-200 dark:bg-yellow-900 dark:text-yellow-200 dark:hover:bg-yellow-800" },
     { name: "Oracle Cloud", color: "bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900 dark:text-orange-200 dark:hover:bg-orange-800" },
     { name: "OAuth", color: "bg-red-100 text-red-800 hover:bg-red-200 dark:bg-red-900 dark:text-red-200 dark:hover:bg-red-800" },
     { name: "Tailscale", color: "bg-purple-100 text-purple-800 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-200 dark:hover:bg-purple-800" },
@@ -70,7 +71,7 @@ const ProfileSection = () => {
             >
               I am a focused and practical person with a passion for solving problems.
               I value continuous learning and teamwork to achieve objective and relevant results.
-              Currently studying Cybersecurity with experience in Oracle Cloud, OAuth, Tailscale,
+              Currently studying Cybersecurity with experience in AWS Cloud, Oracle Cloud, OAuth, Tailscale,
               and various other technologies.
             </motion.p>
             

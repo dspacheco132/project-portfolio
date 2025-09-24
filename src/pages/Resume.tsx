@@ -1,8 +1,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Header from "../components/Header";
+import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Mail, Briefcase, Award, GraduationCap, Github, Linkedin, ExternalLink, X } from "lucide-react";
 
@@ -190,10 +191,10 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Header />
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
+      <Navigation />
       
-      <main className="flex-grow py-16">
+      <main className="flex-grow pt-16">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-16">
@@ -490,6 +491,7 @@ const Resume = () => {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

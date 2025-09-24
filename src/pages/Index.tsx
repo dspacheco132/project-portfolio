@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ProfileSection from "../components/ProfileSection";
 import FeaturedProject from "../components/FeaturedProject";
+import ContactSection from "../components/ContactSection";
 import ScrollToTop from "../components/ScrollToTop";
 import { projects } from "../data/projects";
 
@@ -16,7 +17,9 @@ const Index = () => {
       <Navigation />
       
       <main className="flex-grow">
-        <ProfileSection />
+        <section id="about">
+          <ProfileSection />
+        </section>
         
         <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
           <div className="container mx-auto px-4">
@@ -37,6 +40,10 @@ const Index = () => {
               </a>
             </div>
           </div>
+        </section>
+
+        <section id="contact">
+          <ContactSection />
         </section>
       </main>
 

@@ -2,18 +2,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Home, User, Briefcase, Mail, FileText } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", href: "/", icon: Home },
-    { name: "About", href: "#about", icon: User },
+    { name: "About", href: "/about", icon: User },
     { name: "Projects", href: "/projects", icon: Briefcase },
     { name: "Resume", href: "/resume", icon: FileText },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   useEffect(() => {
@@ -38,28 +40,47 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            className="text-xl font-bold text-gray-900 dark:text-white"
-            whileHover={{ scale: 1.05 }}
-          >
-            DP
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              className="text-xl font-bold text-gray-900 dark:text-white"
+              whileHover={{ scale: 1.05 }}
+            >
+              DP
+            </motion.div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <item.icon className="w-4 h-4" />
-                <span>{item.name}</span>
-              </motion.a>
+                {item.href.startsWith('/#') ? (
+                  <a
+                    href={item.href}
+                    className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`flex items-center space-x-1 transition-colors duration-200 ${
+                      location.pathname === item.href
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </Link>
+                )}
+              </motion.div>
             ))}
             <ThemeToggle />
           </div>
@@ -89,18 +110,35 @@ const Navigation = () => {
             >
               <div className="py-4 space-y-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-lg mt-2">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <motion.div
                     key={item.name}
-                    href={item.href}
-                    className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     onClick={() => setIsOpen(false)}
                   >
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </motion.a>
+                    {item.href.startsWith('/#') ? (
+                      <a
+                        href={item.href}
+                        className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                      >
+                        <item.icon className="w-4 h-4" />
+                        <span>{item.name}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={`flex items-center space-x-2 px-4 py-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                          location.pathname === item.href
+                            ? 'text-blue-600 dark:text-blue-400'
+                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                        }`}
+                      >
+                        <item.icon className="w-4 h-4" />
+                        <span>{item.name}</span>
+                      </Link>
+                    )}
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
