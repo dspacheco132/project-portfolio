@@ -100,8 +100,8 @@ const Contact = () => {
               </p>
             </motion.div>
 
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
@@ -242,7 +242,7 @@ const Contact = () => {
                   Send Email
                 </motion.a>
                 <motion.a
-                  href="tel:+351123456789"
+                  href="tel:+351938536332"
                   className="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

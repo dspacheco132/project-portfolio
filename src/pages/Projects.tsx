@@ -113,7 +113,7 @@ const Projects = () => {
           </div>
           
           {/* Projects Grid */}
-          <div className="flex-1 p-2 -ml-32">
+          <div className="flex-1 p-2">
             {filteredProjects.length > 0 ? (
               <MasonryGrid 
                 columns={columns} 

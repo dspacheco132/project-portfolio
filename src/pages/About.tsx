@@ -350,7 +350,7 @@ const About = () => {
                   >
                     <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
                       <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md relative">
-                        <div className="absolute top-4 right-4">
+                        <div className={`absolute top-4 ${index % 2 === 0 ? 'left-4' : 'right-4'}`}>
                           <GraduationCap className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                         </div>
                         <div className="mb-2">
