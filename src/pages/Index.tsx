@@ -9,7 +9,7 @@ import { projects } from "../data/projects";
 
 const Index = () => {
   // Get specific projects for featured section
-  const featuredProjectIds = ["5", "11", "10"]; // S3 LocalStack, RFIDConnect, Microservices Architecture
+  const featuredProjectIds = ["featured-1", "featured-2", "featured-3"]; // EV Locator, Sagewell Website, RFIDConnect
   const featuredProjects = projects.filter(project => featuredProjectIds.includes(project.id));
 
   return (

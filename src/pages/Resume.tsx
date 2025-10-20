@@ -18,6 +18,17 @@ const Resume = () => {
 
   const experiences = [
     {
+      title: "Cloud Applications Internship",
+      company: "SMC - Serviços Municipais de Comunicações",
+      period: "August 2025 - October 2025 (3 months)",
+      location: "Ponta Delgada, Ilha de São Miguel, Portugal",
+      description: [
+        "Cloud applications internship focusing on software development and cloud technologies",
+        "Working with cloud platforms and cloud-native technologies",
+        "Developing cloud-based applications and services"
+      ]
+    },
+    {
       title: "Web Developer Internship",
       company: "Expolab - Centro Ciência Viva",
       period: "March 2024 - August 2024 (6 months)",
@@ -126,9 +137,6 @@ const Resume = () => {
     }
   ];
 
-  const inProgress = [
-    // Currently no certifications in progress
-  ];
 
   const awards = [
     {
@@ -383,35 +391,11 @@ const Resume = () => {
               ))}
             </div>
 
-            {/* In Progress Section */}
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Currently Pursuing</h3>
-              <div className="space-y-4">
-                {inProgress.map((cert, index) => (
-                  <motion.div 
-                    key={index} 
-                    className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800"
-                    variants={item}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                      <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white">{cert.name}</h4>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm">{cert.issuer}</p>
-                      </div>
-                      <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200 mt-2 sm:mt-0 w-fit">
-                        {cert.status}
-                      </Badge>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm">{cert.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </motion.section>
           
           {/* Awards */}
           <motion.section 
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto mb-8"
             variants={container}
             initial="hidden"
             animate="show"

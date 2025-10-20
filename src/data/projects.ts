@@ -22,6 +22,87 @@ import docker_cleanup from "../../public/dockercleanup.png";
 
 export const projects: Project[] = [
   {
+    id: "featured-1",
+    title: "EV Locator",
+    description:
+      "Electric Vehicle Search and Comparison Platform - A comprehensive web application for searching, comparing, and locating electric and plug-in hybrid vehicles across the North American market.",
+    image: "/3D-EVLOCATOR.png",
+    tags: ["React", "TypeScript", "FastAPI", "Python", "Redis", "Docker", "Nginx", "AWS", "Cloudflare"],
+    link: "https://evlocator.sagewell.com/",
+    date: "2025-08-03",
+    longDescription: "This project consists of a web application designed to search, compare, and locate electric and plug-in hybrid vehicles across the North American market, through integration with the MarketCheck API. Features include modern responsive interface built with React + Vite in TypeScript, backend developed in FastAPI + Pydantic (Python), query caching with Redis, Docker orchestration, Nginx reverse proxy, secure MarketCheck API integration with AWS Secrets Manager, and Cloudflare Tunnel for development environment.",
+    liveUrl: "https://evlocator.sagewell.com/",
+    githubUrl: undefined, // Private repository
+  },
+  {
+    id: "featured-2",
+    title: "Sagewell Website",
+    description:
+      "Corporate website development and deployment focused on strengthening digital presence, delivering modern design, and optimizing content for the company.",
+    image: "/SAGEWELL-COM.gif",
+    tags: ["React", "TypeScript", "Vercel", "SEO", "Strapi", "Figma", "Photoshop", "Illustrator"],
+    link: "https://www.sagewell.com",
+    date: "2025-08-03",
+    longDescription: "Development and deployment of the company's corporate website, focused on strengthening digital presence, delivering a modern design, and optimizing content. The website was developed using React + Vite with TypeScript. Key contributions include deployment via Vercel, custom layouts and content adaptation with design tools, SEO optimization, CMS integration with Strapi, and performance analysis using Google Lighthouse.",
+    liveUrl: "https://www.sagewell.com",
+    githubUrl: undefined, // Private repository
+  },
+  {
+    id: "featured-3",
+    title: "RFIDConnect",
+    description:
+      "Automated attendance registration system using RFID technology for schools.",
+    image: "/RFIDCONNECT.png",
+    tags: [
+      "RFID",
+      "Attendance",
+      "IoT",
+      "Python",
+      "Flask",
+      "MySQL",
+      "Automation",
+      "PAP"
+    ],
+    date: "2024-06-14",
+    longDescription:
+      "RFIDConnect is a system developed to automate the attendance registration in classrooms using RFID cards and readers. The solution allows the management and monitoring of student attendance in a practical and secure way. It features a web interface built with Flask, MySQL integration, embedded hardware with RFID readers, and automated reports, making school management more efficient and reducing bureaucracy.",
+    githubUrl: "https://github.com/Swift132/rfidconnect",
+    extraImages: [
+      {
+        url: "/lovable-uploads/2f821fa2-8ff4-4f14-9690-f5bdacfbaf9e.png",
+        alt: "Dashboard screen of RFIDConnect web app"
+      },
+      {
+        url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
+        alt: "Login screen of RFIDConnect"
+      },
+      {
+        url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
+        alt: "RFIDConnect student RFID card (front side)"
+      },
+      {
+        url: "/lovable-uploads/60174354-556d-45e2-a487-bf09597af50a.png",
+        alt: "RFIDConnect student RFID card (back side)"
+      },
+      {
+        url: "/lovable-uploads/78e27671-2f3b-4b05-8ff9-860cdcbe9fff.png",
+        alt: "RFIDConnect prototype with student card and LCD display"
+      },
+      {
+        url: "/lovable-uploads/91a5fed6-9b45-4f19-9e42-aae2adecb239.png",
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: "/lovable-uploads/a8a44476-cb38-4721-bd35-c4f351b9d99d.png",
+        alt: "RFIDConnect hardware wiring and components inside the prototype"
+      },
+      {
+        url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
+        alt: "RFIDConnect LCD displaying a welcome message"
+      }
+    ]
+  },
+  {
     id: "1",
     title: "Flask AI Chat",
     description:
@@ -91,7 +172,6 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Portfolio", "Responsive"],
     date: "2025-01-15",
     longDescription: "This portfolio website showcases my projects and skills using modern web technologies. It features a responsive design, dark mode toggle, smooth animations, and an interactive project showcase. Built with React and TypeScript for type safety and maintainability.",
-    githubUrl: "https://github.com/dspacheco132/portfolio-website",
   },
   {
     id: "7",
@@ -102,18 +182,6 @@ export const projects: Project[] = [
     tags: ["AWS", "Lambda", "Serverless", "Automation", "Cloud"],
     date: "2025-03-02",
     longDescription: "This project demonstrates how to use AWS Lambda for automating event-driven architectures within AWS. It includes sample triggers from S3, DynamoDB, and custom CloudWatch Events, empowering efficient, scalable automation without server management.",
-    githubUrl: "https://github.com/dspacheco132/aws-lambda-automation",
-  },
-  {
-    id: "8",
-    title: "Node.js REST API",
-    description:
-      "A robust REST API built with Node.js, Express, and MongoDB for managing user authentication and data.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    tags: ["Node.js", "Express", "MongoDB", "REST API", "Authentication"],
-    date: "2024-05-10",
-    longDescription: "This RESTful API provides user authentication, data management, and secure endpoints. It includes JWT token authentication, password hashing, input validation, and comprehensive error handling. Built with scalability and security in mind.",
-    githubUrl: "https://github.com/dspacheco132/nodejs-rest-api",
   },
   {
     id: "9",
@@ -124,7 +192,6 @@ export const projects: Project[] = [
     tags: ["GitHub Actions", "CI/CD", "DevOps", "Automation", "Testing"],
     date: "2024-07-05",
     longDescription: "This project demonstrates a complete CI/CD pipeline setup using GitHub Actions. It includes automated testing, code quality checks, build processes, and deployment to multiple environments. The pipeline ensures code quality and reliability while streamlining the development workflow.",
-    githubUrl: "https://github.com/dspacheco132/cicd-github-actions",
   },
   {
     id: "10",
@@ -136,67 +203,7 @@ export const projects: Project[] = [
     date: "2024-09-18",
     longDescription: "This project showcases a complete microservices architecture implementation with service discovery, load balancing, and inter-service communication. It includes containerized services, orchestration with Kubernetes, and monitoring capabilities for production-ready applications.",
     githubUrl: "https://github.com/dspacheco132/microservices-architecture",
-  },
-  {
-    id: "11",
-    title: "RFIDConnect",
-    description:
-      "Automated attendance registration system using RFID technology for schools.",
-    image: "/lovable-uploads/4c0613a2-e128-416e-9328-bbde15242cc9.png", // updated to high quality logo
-    tags: [
-      "RFID",
-      "Attendance",
-      "IoT",
-      "Python",
-      "Flask",
-      "MySQL",
-      "Automation",
-      "PAP"
-    ],
-    date: "2024-06-14",
-    longDescription:
-      "RFIDConnect is a system developed to automate the attendance registration in classrooms using RFID cards and readers. The solution allows the management and monitoring of student attendance in a practical and secure way. It features a web interface built with Flask, MySQL integration, embedded hardware with RFID readers, and automated reports, making school management more efficient and reducing bureaucracy.",
-    githubUrl: "https://github.com/seu-usuario/rfidconnect",
-    extraImages: [
-      {
-        url: "/lovable-uploads/2f821fa2-8ff4-4f14-9690-f5bdacfbaf9e.png",
-        alt: "Dashboard screen of RFIDConnect web app"
-      },
-      {
-        url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
-        alt: "Login screen of RFIDConnect"
-      },
-      {
-        url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
-        alt: "RFIDConnect student RFID card (front side)"
-      },
-      {
-        url: "/lovable-uploads/738af04b-08ff-480f-a1a2-147323b5e46e.png",
-        alt: "RFIDConnect student RFID card (back side)"
-      },
-      {
-        url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
-        alt: "Design screens and Figma prototypes of RFIDConnect"
-      },
-      // Maquete/fotos reais do hardware
-      {
-        url: "/lovable-uploads/0ba84c08-0d5f-4bbd-882f-e22241e78ec4.png",
-        alt: "RFIDConnect prototype with student card and LCD display"
-      },
-      {
-        url: "/lovable-uploads/a8a44476-cb38-4721-bd35-c4f351b9d99d.png",
-        alt: "RFIDConnect prototype with student card on sensor"
-      },
-      {
-        url: "/lovable-uploads/60174354-556d-45e2-a487-bf09597af50a.png",
-        alt: "RFIDConnect hardware wiring and components inside the prototype"
-      },
-      {
-        url: "/lovable-uploads/78e27671-2f3b-4b05-8ff9-860cdcbe9fff.png",
-        alt: "RFIDConnect LCD displaying a welcome message"
-      }
-    ]
-  },
+  }
 ];
 
 // Add this new function to get a project by ID
