@@ -218,7 +218,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="/ccna_600.png" 
+                        src="/ccna_600.webp" 
                         alt="CCNA Certification" 
                         className="w-full h-full object-contain"
                       />
@@ -244,7 +244,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="/cyberops.png" 
+                        src="/cyberops.webp" 
                         alt="CyberOps Certification" 
                         className="w-full h-full object-contain"
                       />
@@ -270,7 +270,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="/aws-cloud-architect.png" 
+                        src="/aws-cloud-architect.webp" 
                         alt="AWS Solutions Architect Associate" 
                         className="w-full h-full object-contain"
                       />

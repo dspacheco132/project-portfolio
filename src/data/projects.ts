@@ -14,11 +14,11 @@ export type Project = {
 };
 
 // images
-import flask_ai_chat from "../../public/flaskaichat.png";
-import merit_jolera from "../../public/merit-jolera.jpg";
-import kubernetes_webserver from "../../public/fa-minikube.png";
-import terraform_project from "../../public/terraform.png";
-import docker_cleanup from "../../public/dockercleanup.png";
+import flask_ai_chat from "../../public/projects/flask-ai-chat/main.webp";
+import merit_jolera from "../../public/merit-jolera.webp";
+import kubernetes_webserver from "../../public/projects/kubernetes/main.webp";
+import terraform_project from "../../public/projects/terraform/main.webp";
+import docker_cleanup from "../../public/projects/docker-cleanup/main.webp";
 
 export const projects: Project[] = [
   {
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "EV Locator",
     description:
       "Electric Vehicle Search and Comparison Platform - A comprehensive web application for searching, comparing, and locating electric and plug-in hybrid vehicles across the North American market.",
-    image: "/3D-EVLOCATOR.png",
+    image: "/projects/ev-locator/main.png",
     tags: ["React", "TypeScript", "FastAPI", "Python", "Redis", "Docker", "Nginx", "AWS", "Cloudflare"],
     link: "https://evlocator.sagewell.com/",
     date: "2025-08-03",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     title: "Sagewell Website",
     description:
       "Corporate website development and deployment focused on strengthening digital presence, delivering modern design, and optimizing content for the company.",
-    image: "/SAGEWELL-COM.gif",
+    image: "/projects/sagewell/main.gif",
     tags: ["React", "TypeScript", "Vercel", "SEO", "Strapi", "Figma", "Photoshop", "Illustrator"],
     link: "https://www.sagewell.com",
     date: "2025-08-03",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     title: "RFIDConnect",
     description:
       "Automated attendance registration system using RFID technology for schools.",
-    image: "/RFIDCONNECT.png",
+    image: "/projects/rfidconnect/logo.webp",
     tags: [
       "RFID",
       "Attendance",
@@ -69,36 +69,40 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Swift132/rfidconnect",
     extraImages: [
       {
-        url: "/lovable-uploads/2f821fa2-8ff4-4f14-9690-f5bdacfbaf9e.png",
+        url: "/projects/rfidconnect/dashboard.webp",
         alt: "Dashboard screen of RFIDConnect web app"
       },
       {
-        url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
+        url: "/projects/rfidconnect/login.webp",
         alt: "Login screen of RFIDConnect"
       },
       {
-        url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
-        alt: "RFIDConnect student RFID card (front side)"
+        url: "/projects/rfidconnect/design-prototypes.webp",
+        alt: "Design screens and Figma prototypes of RFIDConnect"
       },
       {
-        url: "/lovable-uploads/60174354-556d-45e2-a487-bf09597af50a.png",
-        alt: "RFIDConnect student RFID card (back side)"
-      },
-      {
-        url: "/lovable-uploads/78e27671-2f3b-4b05-8ff9-860cdcbe9fff.png",
-        alt: "RFIDConnect prototype with student card and LCD display"
-      },
-      {
-        url: "/lovable-uploads/91a5fed6-9b45-4f19-9e42-aae2adecb239.png",
-        alt: "RFIDConnect prototype with student card on sensor"
-      },
-      {
-        url: "/lovable-uploads/a8a44476-cb38-4721-bd35-c4f351b9d99d.png",
+        url: "/projects/rfidconnect/hardware-wiring.webp",
         alt: "RFIDConnect hardware wiring and components inside the prototype"
       },
       {
-        url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
+        url: "/projects/rfidconnect/lcd-display.webp",
         alt: "RFIDConnect LCD displaying a welcome message"
+      },
+      {
+        url: "/projects/rfidconnect/prototype-sensor.webp",
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: "/projects/rfidconnect/prototype-card.webp",
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: "/projects/rfidconnect/card-front.webp",
+        alt: "RFIDConnect student RFID card (front side)"
+      },
+      {
+        url: "/projects/rfidconnect/prototype-display.webp",
+        alt: "RFIDConnect prototype with student card and LCD display"
       }
     ]
   },

@@ -144,42 +144,42 @@ const Resume = () => {
       organization: "Azores Skills",
       year: "2024",
       description: "Recognition for excellence in cybersecurity skills competition",
-      image: "/azores-skills-award.jpg"
+      image: "/azores-skills-award.webp"
     },
     {
       title: "3rd Place at Atlântico Junior - FLAD",
       organization: "FLAD",
       year: "2022",
       description: "Award for innovation and technical achievement",
-      image: "/atlanticojunior.jpeg"
+      image: "/atlanticojunior.webp"
     },
     {
       title: "3rd Place at SkillsPortugal - CyberSecurity",
       organization: "SkillsPortugal",
       year: "2024",
       description: "National recognition for cybersecurity skills",
-      image: "/skills-portugal-award.jpg"
+      image: "/skills-portugal-award.webp"
     },
     {
       title: "Merit Award - Jolera",
       organization: "Jolera",
       year: "2024",
       description: "Recognition for outstanding technical achievement",
-      image: "/merit-jolera.jpg"
+      image: "/merit-jolera.webp"
     },
     {
       title: "Merit Award - Câmara Municipal de Ponta Delgada",
       organization: "Ponta Delgada City Hall",
       year: "2024",
       description: "Recognition for contributions to local technology initiatives",
-      image: "/merit-ponta-delgada.jpg"
+      image: "/merit-ponta-delgada.webp"
     },
     {
       title: "Merit Award - Connexall",
       organization: "Connexall",
       year: "2025",
       description: "Award for innovation and technical achievement - David Tavares",
-      image: "/CertificadoConnexall.JPG"
+      image: "/CertificadoConnexall.webp"
     }
   ];
 
