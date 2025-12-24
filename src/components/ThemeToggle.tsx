@@ -23,8 +23,9 @@ const ThemeToggle = () => {
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      aria-label="Toggle theme"
-      className="rounded-full border-2 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 overflow-hidden"
+      aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+      aria-pressed={theme === "dark"}
+      className="rounded-full border-2 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 overflow-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
     >
       <AnimatePresence mode="wait">
         {theme === "dark" ? (
@@ -35,7 +36,7 @@ const ThemeToggle = () => {
             exit={{ rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
+            <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" aria-hidden="true" />
           </motion.div>
         ) : (
           <motion.div
@@ -45,7 +46,7 @@ const ThemeToggle = () => {
             exit={{ rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Moon className="h-[1.2rem] w-[1.2rem] text-blue-600" />
+            <Moon className="h-[1.2rem] w-[1.2rem] text-blue-600" aria-hidden="true" />
           </motion.div>
         )}
       </AnimatePresence>

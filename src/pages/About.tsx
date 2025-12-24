@@ -1,23 +1,86 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import ProfileSection from "../components/ProfileSection";
 import ScrollToTop from "../components/ScrollToTop";
-import { motion } from "framer-motion";
-import { Code, Award, Users, Coffee, GraduationCap, Briefcase, Heart, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Code, Award, Users, GraduationCap, Heart, ExternalLink, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
-  const skills = [
-    { name: "AWS Cloud", level: 90 },
-    { name: "Oracle Cloud", level: 85 },
-    { name: "OAuth", level: 85 },
-    { name: "Tailscale", level: 80 },
-    { name: "Docker", level: 85 },
-    { name: "Cisco", level: 75 },
-    { name: "Python", level: 80 },
-    { name: "Network Security", level: 90 },
-    { name: "Cybersecurity", level: 85 },
-    { name: "CCNA", level: 80 },
-    { name: "CyberOps", level: 75 },
+  const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
+
+  const skillCategories = [
+    {
+      title: "Cloud & Infrastructure",
+      skills: [
+        { name: "AWS Cloud" },
+        { name: "Oracle Cloud" },
+        { name: "Docker" },
+        { name: "Kubernetes" },
+        { name: "Terraform" },
+        { name: "Tailscale" },
+        { name: "AWS Lambda" },
+        { name: "AWS S3" },
+        { name: "EC2" },
+        { name: "LocalStack" },
+      ]
+    },
+    {
+      title: "Backend & Development",
+      skills: [
+        { name: "Python" },
+        { name: "FastAPI" },
+        { name: "Flask" },
+        { name: "OAuth" },
+        { name: "MySQL" },
+        { name: "Redis" },
+        { name: "REST APIs" },
+      ]
+    },
+    {
+      title: "Frontend & Web",
+      skills: [
+        { name: "React" },
+        { name: "TypeScript" },
+        { name: "Tailwind CSS" },
+        { name: "Vite" },
+        { name: "HTML/CSS" },
+        { name: "Responsive Design" },
+      ]
+    },
+    {
+      title: "DevOps & CI/CD",
+      skills: [
+        { name: "GitHub Actions" },
+        { name: "CI/CD Pipelines" },
+        { name: "Nginx" },
+        { name: "Shell Scripting" },
+        { name: "Infrastructure as Code" },
+        { name: "Vercel" },
+      ]
+    },
+    {
+      title: "Security & Networking",
+      skills: [
+        { name: "Network Security" },
+        { name: "Cybersecurity" },
+        { name: "Cisco" },
+        { name: "CCNA" },
+        { name: "CyberOps" },
+        { name: "Security Groups" },
+        { name: "VPN" },
+      ]
+    },
+    {
+      title: "Tools & Others",
+      skills: [
+        { name: "Strapi" },
+        { name: "Figma" },
+        { name: "Git" },
+        { name: "Linux" },
+        { name: "Cloudflare" },
+        { name: "SEO" },
+      ]
+    },
   ];
 
   const certifications = [
@@ -115,7 +178,7 @@ const About = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center max-w-4xl mx-auto"
@@ -123,24 +186,17 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 About Me
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate cybersecurity specialist with a strong foundation in network security, 
-                cloud technologies, and practical problem-solving. My journey is driven by continuous 
-                learning and the desire to make technology more secure and accessible.
+              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                Learn more about my journey, skills, certifications, and the values that drive my work.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Profile Section */}
-        <section id="about">
-          <ProfileSection />
-        </section>
-
-        {/* Skills Section */}
+        {/* Skills Section - Roadmap.sh Style */}
         <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
           <div className="container mx-auto px-4">
             <motion.div
@@ -152,36 +208,81 @@ const About = () => {
             >
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Technical Skills</h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Here's a breakdown of my technical expertise across various domains
+                My technical expertise organized by domain areas
               </p>
             </motion.div>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {skillCategories.map((category, categoryIndex) => {
+                  const isExpanded = expandedCategory === categoryIndex;
+                  
+                  return (
+                    <div key={categoryIndex} className="col-span-1">
+                      {/* Category Card */}
                       <motion.div
-                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                      />
+                        className="bg-white dark:bg-gray-800 rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all cursor-pointer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setExpandedCategory(isExpanded ? null : categoryIndex)}
+                      >
+                        <div className="p-4 flex flex-col items-center justify-center text-center min-h-[140px]">
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                            {category.title}
+                          </h3>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                            {category.skills.length} skills
+                          </p>
+                          <ChevronDown 
+                            className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
+                              isExpanded ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </div>
+                      </motion.div>
+
+                      {/* Expanded Skills */}
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                            animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                            transition={{ 
+                              duration: 0.4,
+                              ease: [0.4, 0, 0.2, 1]
+                            }}
+                            className="overflow-hidden"
+                          >
+                            <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                              <div className="space-y-2">
+                                {category.skills.map((skill, skillIndex) => (
+                                  <motion.div
+                                    key={skillIndex}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ 
+                                      duration: 0.3, 
+                                      delay: skillIndex * 0.04,
+                                      ease: "easeOut"
+                                    }}
+                                    className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                                  >
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                    <span className="text-sm text-gray-900 dark:text-white font-medium">
+                                      {skill.name}
+                                    </span>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
-                  </motion.div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

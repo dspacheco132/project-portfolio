@@ -99,6 +99,98 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
   }
+
+  /* WCAG AA: Focus visible for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid hsl(217.2 91.2% 59.8%);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Skip link for screen readers */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: hsl(217.2 91.2% 59.8%);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Enhanced focus styles for interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid hsl(217.2 91.2% 59.8%);
+    outline-offset: 2px;
+  }
+
+  /* Ensure sufficient contrast for links */
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* WCAG AA: Ensure minimum contrast ratios */
+  /* Text colors that meet WCAG AA (4.5:1 for normal text, 3:1 for large text) */
+  .text-gray-600 {
+    color: #4b5563; /* meets AA for normal text on white */
+  }
+
+  .dark .text-gray-300 {
+    color: #d1d5db; /* meets AA for normal text on dark */
+  }
+
+  .text-gray-700 {
+    color: #374151; /* meets AA for normal text on white */
+  }
+
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Better focus styles for buttons */
+  button:focus-visible {
+    outline: 2px solid hsl(217.2 91.2% 59.8%);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
 
 /* Masonry Grid Styles */

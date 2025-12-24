@@ -28,6 +28,8 @@ const Navigation = () => {
 
   return (
     <motion.nav
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg"
@@ -40,60 +42,65 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/">
-            <motion.div
-              className="text-xl font-bold text-gray-900 dark:text-white"
-              whileHover={{ scale: 1.05 }}
-            >
-              DP
-            </motion.div>
+          <Link to="/" aria-label="Diogo Pacheco - Home" className="flex items-center hover:opacity-80 transition-opacity">
+            <img 
+              src="/dspacheco-logo-black.webp" 
+              alt="Diogo Pacheco Logo" 
+              className="h-12 w-auto dark:invert"
+            />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <ul className="hidden md:flex items-center space-x-8 list-none m-0 p-0" role="list">
             {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                {item.href.startsWith('/#') ? (
-                  <a
-                    href={item.href}
-                    className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  >
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </a>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className={`flex items-center space-x-1 transition-colors duration-200 ${
-                      location.pathname === item.href
-                        ? 'text-blue-600 dark:text-blue-400'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                    }`}
-                  >
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </Link>
-                )}
-              </motion.div>
+              <li key={item.name} role="listitem">
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {item.href.startsWith('/#') ? (
+                    <a
+                      href={item.href}
+                      className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                      aria-current={location.pathname === item.href ? "page" : undefined}
+                    >
+                      <item.icon className="w-4 h-4" aria-hidden="true" />
+                      <span>{item.name}</span>
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`flex items-center space-x-1 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded ${
+                        location.pathname === item.href
+                          ? 'text-blue-600 dark:text-blue-400'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                      }`}
+                      aria-current={location.pathname === item.href ? "page" : undefined}
+                    >
+                      <item.icon className="w-4 h-4" aria-hidden="true" />
+                      <span>{item.name}</span>
+                    </Link>
+                  )}
+                </motion.div>
+              </li>
             ))}
             <ThemeToggle />
-          </div>
+          </ul>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300"
+              className="text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded p-2"
               whileTap={{ scale: 0.95 }}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </motion.button>
           </div>
         </div>
@@ -102,45 +109,49 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              id="mobile-menu"
               className="md:hidden"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="py-4 space-y-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-lg mt-2">
+              <ul className="py-4 space-y-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-lg mt-2 list-none m-0 p-0" role="list">
                 {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.href.startsWith('/#') ? (
-                      <a
-                        href={item.href}
-                        className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-                      >
-                        <item.icon className="w-4 h-4" />
-                        <span>{item.name}</span>
-                      </a>
-                    ) : (
-                      <Link
-                        to={item.href}
-                        className={`flex items-center space-x-2 px-4 py-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                          location.pathname === item.href
-                            ? 'text-blue-600 dark:text-blue-400'
-                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                        }`}
-                      >
-                        <item.icon className="w-4 h-4" />
-                        <span>{item.name}</span>
-                      </Link>
-                    )}
-                  </motion.div>
+                  <li key={item.name} role="listitem">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.href.startsWith('/#') ? (
+                        <a
+                          href={item.href}
+                          className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded"
+                          aria-current={location.pathname === item.href ? "page" : undefined}
+                        >
+                          <item.icon className="w-4 h-4" aria-hidden="true" />
+                          <span>{item.name}</span>
+                        </a>
+                      ) : (
+                        <Link
+                          to={item.href}
+                          className={`flex items-center space-x-2 px-4 py-2 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded ${
+                            location.pathname === item.href
+                              ? 'text-blue-600 dark:text-blue-400'
+                              : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                          }`}
+                          aria-current={location.pathname === item.href ? "page" : undefined}
+                        >
+                          <item.icon className="w-4 h-4" aria-hidden="true" />
+                          <span>{item.name}</span>
+                        </Link>
+                      )}
+                    </motion.div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           )}
         </AnimatePresence>

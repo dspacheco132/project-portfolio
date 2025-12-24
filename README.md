@@ -2,7 +2,7 @@
 
 # 🚀 Diogo Pacheco - Portfolio
 
-![Portfolio Preview](https://portfolio.swift-ai.pt/preview.png)
+![Portfolio Preview](https://portfolio.diogopacheco.com/preview.png)
 
 **Modern, responsive portfolio showcasing my projects and skills**
 

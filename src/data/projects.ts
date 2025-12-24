@@ -52,7 +52,7 @@ export const projects: Project[] = [
     title: "RFIDConnect",
     description:
       "Automated attendance registration system using RFID technology for schools.",
-    image: "/projects/rfidconnect/logo.webp",
+    image: "/RFIDCONNECT.png",
     tags: [
       "RFID",
       "Attendance",
