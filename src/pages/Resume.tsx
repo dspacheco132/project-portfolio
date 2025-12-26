@@ -244,7 +244,7 @@ const Resume = () => {
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               I am Diogo Pacheco, a focused, practical person with a passion for problem-solving. 
               I value continuous learning and teamwork to achieve objective and relevant results.
-              Currently studying Cybersecurity at ENTA (Escola de Novas Tecnologias dos Açores).
+              Completed technical training in Computer Networks and Cybersecurity at ENTA (Escola de Novas Tecnologias dos Açores).
             </p>
           </motion.section>
           

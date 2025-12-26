@@ -172,37 +172,6 @@ const Projects = () => {
               </button>
             </div>
             
-            {/* Mobile Filter Chips */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setFilter("all")}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                  filter === "all"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-                }`}
-              >
-                All
-              </button>
-              {uniqueTags.slice(0, 6).map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => setFilter(tag)}
-                  className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                    filter === tag
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
-              {uniqueTags.length > 6 && (
-                <span className="px-3 py-1 text-xs text-gray-500 dark:text-gray-400">
-                  +{uniqueTags.length - 6} more
-                </span>
-              )}
-            </div>
           </div>
           
           {/* Mobile Projects List */}
@@ -261,7 +230,9 @@ const Projects = () => {
                   <button
                     onClick={() => setFilter("live")}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      filter === "live" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                      filter === "live" 
+                        ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white" 
+                        : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }`}
                   >
                     Live Demo
@@ -269,7 +240,9 @@ const Projects = () => {
                   <button
                     onClick={() => setFilter("github")}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      filter === "github" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                      filter === "github" 
+                        ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white" 
+                        : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }`}
                   >
                     GitHub
@@ -277,7 +250,9 @@ const Projects = () => {
                   <button
                     onClick={() => setFilter("recent")}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      filter === "recent" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                      filter === "recent" 
+                        ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white" 
+                        : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }`}
                   >
                     Recent
@@ -285,41 +260,13 @@ const Projects = () => {
                   <button
                     onClick={() => setFilter("complex")}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      filter === "complex" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                      filter === "complex" 
+                        ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white" 
+                        : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }`}
                   >
                     Complex
                   </button>
-                </div>
-              </div>
-
-              {/* Technology Filters */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Technology</label>
-                <div className="space-y-1">
-                  <button
-                    onClick={() => setFilter("all")}
-                    className={`w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors text-left ${
-                      filter === "all" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
-                    }`}
-                  >
-                    All Projects ({filteredProjects.length})
-                  </button>
-                  {uniqueTags.map((tag) => {
-                    const tagCount = projects.filter(p => p.tags.includes(tag)).length;
-                    return (
-                      <button
-                        key={tag}
-                        onClick={() => setFilter(tag)}
-                        className={`w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors text-left flex justify-between ${
-                          filter === tag ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
-                        }`}
-                      >
-                        <span>{tag}</span>
-                        <span className="text-xs opacity-70">({tagCount})</span>
-                      </button>
-                    );
-                  })}
                 </div>
               </div>
 
