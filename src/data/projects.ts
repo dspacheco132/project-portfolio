@@ -1,5 +1,5 @@
 // Replace StaticImageData with string since we don't want to use next/image
-const CDN_BASE_URL = "https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev";
+const CDN_BASE_URL = "https://r2.diogopacheco.com";
 
 export type Project = {
   id: string;

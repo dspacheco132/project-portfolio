@@ -12,7 +12,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const CDN_BASE_URL = "https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev"; // LINK TO THE CDN
+const CDN_BASE_URL = "https://r2.diogopacheco.com";
 
 interface AwardData {
   id: string;
@@ -421,7 +421,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/ccna_600.webp" 
+                        src="https://r2.diogopacheco.com/public/ccna_600.webp" 
                         alt="CCNA Certification" 
                         className="w-full h-full object-contain"
                       />
@@ -447,7 +447,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/cyberops.webp" 
+                        src="https://r2.diogopacheco.com/public/cyberops.webp" 
                         alt="CyberOps Certification" 
                         className="w-full h-full object-contain"
                       />
@@ -473,7 +473,7 @@ const About = () => {
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 group-hover:shadow-xl transition-all duration-300">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                       <img 
-                        src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/aws-cloud-architect.webp" 
+                        src="https://r2.diogopacheco.com/public/aws-cloud-architect.webp" 
                         alt="AWS Solutions Architect Associate" 
                         className="w-full h-full object-contain"
                       />

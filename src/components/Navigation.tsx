@@ -44,50 +44,52 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" aria-label="Diogo Pacheco - Home" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
             <img 
-              src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/dspacheco-logo-black.webp" 
+              src="https://r2.diogopacheco.com/public/dspacheco-logo-black.webp" 
               alt="Diogo Pacheco Logo" 
               className="h-12 w-auto dark:invert"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center space-x-10 lg:space-x-12 list-none m-0 p-0 ml-auto" role="list">
-            {navItems.map((item, index) => (
-              <li key={item.name} role="listitem">
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item.href.startsWith('/#') ? (
-                    <a
-                      href={item.href}
-                      className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
-                      aria-current={location.pathname === item.href ? "page" : undefined}
-                    >
-                      <item.icon className="w-4 h-4" aria-hidden="true" />
-                      <span>{item.name}</span>
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className={`flex items-center space-x-1 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded ${
-                        location.pathname === item.href
-                          ? 'text-blue-600 dark:text-blue-400'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                      }`}
-                      aria-current={location.pathname === item.href ? "page" : undefined}
-                    >
-                      <item.icon className="w-4 h-4" aria-hidden="true" />
-                      <span>{item.name}</span>
-                    </Link>
-                  )}
-                </motion.div>
-              </li>
-            ))}
+          <div className="hidden md:flex items-center space-x-10 lg:space-x-12 ml-auto">
+            <ul className="flex items-center space-x-10 lg:space-x-12 list-none m-0 p-0">
+              {navItems.map((item, index) => (
+                <li key={item.name}>
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {item.href.startsWith('/#') ? (
+                      <a
+                        href={item.href}
+                        className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                        aria-current={location.pathname === item.href ? "page" : undefined}
+                      >
+                        <item.icon className="w-4 h-4" aria-hidden="true" />
+                        <span>{item.name}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={`flex items-center space-x-1 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded ${
+                          location.pathname === item.href
+                            ? 'text-blue-600 dark:text-blue-400'
+                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                        }`}
+                        aria-current={location.pathname === item.href ? "page" : undefined}
+                      >
+                        <item.icon className="w-4 h-4" aria-hidden="true" />
+                        <span>{item.name}</span>
+                      </Link>
+                    )}
+                  </motion.div>
+                </li>
+              ))}
+            </ul>
             <ThemeToggle />
-          </ul>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
@@ -116,9 +118,9 @@ const Navigation = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <ul className="py-4 space-y-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-lg mt-2 list-none m-0 p-0" role="list">
+              <ul className="py-4 space-y-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-lg mt-2 list-none m-0 p-0">
                 {navItems.map((item, index) => (
-                  <li key={item.name} role="listitem">
+                  <li key={item.name}>
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
