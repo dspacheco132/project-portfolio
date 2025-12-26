@@ -38,12 +38,12 @@ const ProfileSection = () => {
           <div className="relative group">
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity" aria-hidden="true"></div>
             <Avatar className="relative h-56 w-56 border-4 border-white dark:border-gray-800 shadow-2xl">
-              <AvatarImage 
-                src="/photo-dspacheco.jpeg" 
-                alt="Diogo Pacheco profile picture"
-                loading="eager"
-                fetchPriority="high"
-              />
+                  <AvatarImage 
+                    src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/photo-dspacheco.jpeg" 
+                    alt="Diogo Pacheco profile picture"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
               <AvatarFallback className="bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
                 <User className="h-28 w-28" aria-hidden="true" />
               </AvatarFallback>

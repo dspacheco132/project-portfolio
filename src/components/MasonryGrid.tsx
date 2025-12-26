@@ -19,16 +19,15 @@ const MasonryGrid = ({
       style={{
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
         gap: `${gap}px`,
-        alignItems: 'start'
+        alignItems: 'stretch'
       }}
     >
       {children.map((child, index) => (
         <div
           key={index}
-          className="animate-in fade-in-0 slide-in-from-bottom-4 duration-500"
+          className="animate-in fade-in-0 slide-in-from-bottom-4 duration-500 h-full"
           style={{
-            animationDelay: `${index * 100}ms`,
-            height: 'fit-content'
+            animationDelay: `${index * 100}ms`
           }}
         >
           {child}

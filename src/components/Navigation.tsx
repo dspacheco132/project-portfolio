@@ -39,19 +39,19 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" aria-label="Diogo Pacheco - Home" className="flex items-center hover:opacity-80 transition-opacity">
+          <Link to="/" aria-label="Diogo Pacheco - Home" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
             <img 
-              src="/dspacheco-logo-black.webp" 
+              src="https://pub-d1507963b1aa465dab3b4e8a1195ac16.r2.dev/public/dspacheco-logo-black.webp" 
               alt="Diogo Pacheco Logo" 
               className="h-12 w-auto dark:invert"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center space-x-8 list-none m-0 p-0" role="list">
+          <ul className="hidden md:flex items-center space-x-10 lg:space-x-12 list-none m-0 p-0 ml-auto" role="list">
             {navItems.map((item, index) => (
               <li key={item.name} role="listitem">
                 <motion.div
