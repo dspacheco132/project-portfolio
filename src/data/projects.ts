@@ -24,7 +24,7 @@ export const projects: Project[] = [
     image: `${CDN_BASE_URL}/public/3D-EVLOCATOR.png`,
     tags: ["React", "TypeScript", "FastAPI", "Python", "Redis", "Docker", "Nginx", "AWS", "Cloudflare"],
     link: "https://evlocator.sagewell.com/",
-    date: "2025-08-03",
+    date: "2025-09-01",
     longDescription: "This project consists of a web application designed to search, compare, and locate electric and plug-in hybrid vehicles across the North American market, through integration with the MarketCheck API. Features include modern responsive interface built with React + Vite in TypeScript, backend developed in FastAPI + Pydantic (Python), query caching with Redis, Docker orchestration, Nginx reverse proxy, secure MarketCheck API integration with AWS Secrets Manager, and Cloudflare Tunnel for development environment.",
     liveUrl: "https://evlocator.sagewell.com/",
     githubUrl: undefined, // Private repository
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     image: `${CDN_BASE_URL}/public/SAGEWELL-COM%20copy.gif`,
     tags: ["React", "TypeScript", "Vercel", "SEO", "Strapi", "Figma", "Photoshop", "Illustrator"],
     link: "https://www.sagewell.com",
-    date: "2025-08-03",
+    date: "2025-08-30",
     longDescription: "Development and deployment of the company's corporate website, focused on strengthening digital presence, delivering a modern design, and optimizing content. The website was developed using React + Vite with TypeScript. Key contributions include deployment via Vercel, custom layouts and content adaptation with design tools, SEO optimization, CMS integration with Strapi, and performance analysis using Google Lighthouse.",
     liveUrl: "https://www.sagewell.com",
     githubUrl: undefined, // Private repository
@@ -171,6 +171,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Portfolio", "Responsive"],
     date: "2025-01-15",
     longDescription: "This portfolio website showcases my projects and skills using modern web technologies. It features a responsive design, dark mode toggle, smooth animations, and an interactive project showcase. Built with React and TypeScript for type safety and maintainability.",
+    githubUrl: "https://github.com/dspacheco132/project-portfolio",
   },
   {
     id: "7",
@@ -202,7 +203,52 @@ export const projects: Project[] = [
     date: "2024-09-18",
     longDescription: "This project showcases a complete microservices architecture implementation with service discovery, load balancing, and inter-service communication. It includes containerized services, orchestration with Kubernetes, and monitoring capabilities for production-ready applications.",
     githubUrl: "https://github.com/dspacheco132/microservices-architecture",
-  }
+  },
+  {
+    id: "11",
+    title: "Supabase Self-Hosted",
+    description:
+      "Docker Compose setup for self-hosting Supabase, providing a complete backend-as-a-service stack locally.",
+    image: "https://r2.diogopacheco.com/public/supabase-dashboard.png",
+    tags: ["Supabase", "Docker", "Docker Compose", "Self-hosting", "Database", "PostgreSQL", "DevOps"],
+    date: "2025-08-10",
+    longDescription: "A minimal Docker Compose setup for self-hosting Supabase locally. This project provides a complete Supabase stack including PostgreSQL database, authentication, storage, and all necessary services. It includes backup and restore scripts, making it easy to manage your self-hosted Supabase instance for development and production use.",
+    githubUrl: "https://github.com/dspacheco132/supabase-deploy.git",
+  },
+  {
+    id: "12",
+    title: "Strapi Docker Environment",
+    description:
+      "Automated Strapi development environment using Docker Compose with automated installation and setup scripts.",
+    image: "https://r2.diogopacheco.com/public/analytics.png_a733bbc13e.png",
+    tags: ["Strapi", "Docker", "Docker Compose", "CMS", "TypeScript", "Node.js", "DevOps"],
+    date: "2025-08-15",
+    longDescription: "A Docker Compose setup that completely automates the creation of a Strapi project. The project includes a custom entrypoint script that automates the entire Strapi installation process using expect for interaction automation. Features include automated project creation with TypeScript support, SQLite database configuration, domain configuration for admin panel, custom data import scripts, and easy container management. This makes it simple to set up and deploy a Strapi CMS instance for development or production use.",
+    githubUrl: "https://github.com/dspacheco132/strapi-prod.git",
+  },
+  {
+    id: "13",
+    title: "Grafana Enterprise Dashboard",
+    description:
+      "Docker Compose setup for testing and configuring Grafana Enterprise with persistent storage and environment configuration.",
+    image: "https://r2.diogopacheco.com/public/grafana-dashboard-english.png",
+    tags: ["Grafana", "Docker", "Docker Compose", "Monitoring", "Visualization", "DevOps"],
+    date: "2025-08-20",
+    longDescription: "A Docker Compose project designed to test and configure Grafana Enterprise. The setup includes environment variable configuration for admin credentials, persistent storage for Grafana data, automatic restart policies, and easy container management. This project provides a quick way to spin up a Grafana instance for testing dashboards, data sources, and monitoring configurations in a containerized environment.",
+    githubUrl: "https://github.com/dspacheco132/grafana-prj.git",
+  },
+  {
+    id: "14",
+    title: "Transcriber Whisper API",
+    description:
+      "REST API developed in Python using FastAPI and OpenAI Whisper for audio-to-text transcription with support for multiple formats and languages.",
+    image: "https://r2.diogopacheco.com/public/Whisper-001--1024x576.webp",
+    tags: ["Python", "FastAPI", "OpenAI Whisper", "Audio Transcription", "AI", "Docker", "REST API"],
+    date: "2025-08-25",
+    longDescription: "A REST API for audio-to-text transcription using OpenAI Whisper models. The API supports multiple audio formats (mp3, wav, m4a, flac, ogg, webm), automatic language detection, manual language specification, and translation capabilities. Features include Docker containerization, multiple Whisper model options (tiny, base, small, medium, large), endpoint for URL-based transcription (useful for Telegram and N8N integrations), and comprehensive API documentation. The project is designed for easy integration with automation tools like N8N and messaging platforms like Telegram.",
+    githubUrl: "https://github.com/dspacheco132/transcriber-whisper.git",
+  },
+  
 ];
 
 // Add this new function to get a project by ID

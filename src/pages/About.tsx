@@ -185,14 +185,6 @@ const About = () => {
     },
   ];
 
-  const certifications = [
-    { name: "CCNA", issuer: "Cisco", year: "2025", link: "https://www.credly.com/badges/0a543b66-5714-4427-9cab-8b9b4a7aaf78/public_url" },
-    { name: "AWS Academy Cloud Architecting", issuer: "Amazon Web Services", year: "2025", link: "https://www.credly.com/badges/7db1dcf2-d42e-4c69-ad1f-651b6a2986ab" },
-    { name: "AWS Solutions Architect - Associate", issuer: "Amazon Web Services", year: "2025", link: "https://www.credly.com/badges/890afde7-8cfa-433e-927f-eff02e3c5456/public_url" },
-    { name: "CyberOps Associate", issuer: "Cisco", year: "2025", link: "https://www.credly.com/badges/046d471d-c164-4605-8c13-c6395cda5b9a/linked_in_profile" },
-    { name: "Network Security Fundamentals", issuer: "Cisco", year: "2023", link: null },
-  ];
-
   const timeline = [
     {
       year: "2024-2025",
@@ -486,36 +478,6 @@ const About = () => {
                     </div>
                   </div>
                 </motion.div>
-              </div>
-            </div>
-
-            {/* Additional Certifications */}
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {certifications.slice(3).map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    className={`bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 ${cert.link ? 'cursor-pointer hover:shadow-lg' : ''}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => cert.link && window.open(cert.link, '_blank')}
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-3">
-                        <Award className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{cert.name}</h3>
-                      </div>
-                      {cert.link && (
-                        <ExternalLink className="w-4 h-4 text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" />
-                      )}
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300 mb-2">{cert.issuer}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{cert.year}</p>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </div>

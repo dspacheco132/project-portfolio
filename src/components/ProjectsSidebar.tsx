@@ -113,7 +113,11 @@ const ProjectsSidebar = ({
             <Button
               variant={activeFilter === "live" ? "default" : "outline"}
               onClick={() => onFilterChange("live")}
-              className="h-8 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              className={`h-8 text-xs ${
+                activeFilter === "live"
+                  ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white"
+                  : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              }`}
             >
               <Globe className="h-3 w-3 mr-1" />
               Live Demo
@@ -121,7 +125,11 @@ const ProjectsSidebar = ({
             <Button
               variant={activeFilter === "github" ? "default" : "outline"}
               onClick={() => onFilterChange("github")}
-              className="h-8 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              className={`h-8 text-xs ${
+                activeFilter === "github"
+                  ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white"
+                  : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              }`}
             >
               <Github className="h-3 w-3 mr-1" />
               GitHub
@@ -129,7 +137,11 @@ const ProjectsSidebar = ({
             <Button
               variant={activeFilter === "recent" ? "default" : "outline"}
               onClick={() => onFilterChange("recent")}
-              className="h-8 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              className={`h-8 text-xs ${
+                activeFilter === "recent"
+                  ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white"
+                  : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              }`}
             >
               <Clock className="h-3 w-3 mr-1" />
               Recent
@@ -137,58 +149,16 @@ const ProjectsSidebar = ({
             <Button
               variant={activeFilter === "complex" ? "default" : "outline"}
               onClick={() => onFilterChange("complex")}
-              className="h-8 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              className={`h-8 text-xs ${
+                activeFilter === "complex"
+                  ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:text-white"
+                  : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+              }`}
             >
               <Star className="h-3 w-3 mr-1" />
               Complex
             </Button>
           </div>
-        </div>
-
-        {/* Filters */}
-        <div className="space-y-3">
-          <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-            Filter by Technology
-          </label>
-          
-          {/* All Projects Button */}
-          <Button
-            variant={activeFilter === "all" ? "default" : "outline"}
-            onClick={() => onFilterChange("all")}
-            className="w-full justify-start h-10 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
-          >
-            <div className="flex items-center justify-between w-full">
-              <span>All Projects</span>
-              <Badge variant="secondary" className="ml-2 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                {projectCount}
-              </Badge>
-            </div>
-          </Button>
-
-          {/* Technology Dropdown */}
-          <Select value={activeFilter === "all" ? "" : activeFilter} onValueChange={(value) => onFilterChange(value || "all")}>
-            <SelectTrigger className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 focus:ring-2 focus:ring-blue-400 focus:border-blue-400">
-              <SelectValue placeholder="Select a technology..." />
-            </SelectTrigger>
-            <SelectContent>
-              {tags.map((tag) => {
-                const tagCount = projects.filter(p => p.tags.includes(tag)).length;
-                return (
-                  <SelectItem key={tag} value={tag}>
-                    <div className="flex items-center justify-between w-full">
-                      <div className="flex items-center">
-                        <Tag className="h-4 w-4 mr-2 text-slate-500" />
-                        <span>{tag}</span>
-                      </div>
-                      <Badge variant="outline" className="ml-2 text-xs">
-                        {tagCount}
-                      </Badge>
-                    </div>
-                  </SelectItem>
-                );
-              })}
-            </SelectContent>
-          </Select>
         </div>
 
         {/* Clear Filters */}
