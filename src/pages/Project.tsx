@@ -62,8 +62,8 @@ const Project = () => {
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h1>
 
               <div className="flex items-center text-gray-600 dark:text-gray-300 mb-8">
-                <Calendar className="h-5 w-5 mr-2" />
-                <span>{project.date}</span>
+                <Calendar className="h-5 w-5 mr-2" aria-hidden="true" />
+                <time dateTime={project.date}>{project.date}</time>
               </div>
             </div>
           </div>
@@ -77,31 +77,37 @@ const Project = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
             {/* RFIDConnect Gallery */}
             {extraImages.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-200">
+              <div className="mt-8" role="region" aria-label="Project screenshots">
+                <h2 className="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-200">
                   Screenshots & App Views
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                </h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none m-0 p-0" role="list">
                   {extraImages.map((img, idx) => (
-                    <div key={img.url} className="rounded-lg bg-gray-100 dark:bg-gray-800 p-2 shadow hover:shadow-lg transition-shadow">
-                      <img
-                        src={img.url}
-                        alt={img.alt || "RFIDConnect screenshot"}
-                        className="w-full h-64 object-contain object-center rounded-lg"
-                        loading="lazy"
-                      />
-                      {img.alt && (
-                        <div className="mt-2 text-xs text-center text-gray-600 dark:text-gray-300">
-                          {img.alt}
-                        </div>
-                      )}
-                    </div>
+                    <li key={img.url || idx} role="listitem">
+                      <figure className="rounded-lg bg-gray-100 dark:bg-gray-800 p-2 shadow hover:shadow-lg transition-shadow">
+                        <img
+                          src={img.url}
+                          alt={img.alt || `${project.title} screenshot ${idx + 1}`}
+                          className="w-full h-64 object-contain object-center rounded-lg"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {img.alt && (
+                          <figcaption className="mt-2 text-xs text-center text-gray-600 dark:text-gray-300">
+                            {img.alt}
+                          </figcaption>
+                        )}
+                      </figure>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             )}
           </div>
@@ -126,9 +132,10 @@ const Project = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label={`View ${project.title} live site (opens in new tab)`}
                   >
-                    <Globe className="h-5 w-5" />
+                    <Globe className="h-5 w-5" aria-hidden="true" />
                     View Live Site
                   </a>
                 )}
@@ -138,9 +145,10 @@ const Project = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label={`View ${project.title} source code on GitHub (opens in new tab)`}
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="h-5 w-5" aria-hidden="true" />
                     View Source Code
                   </a>
                 )}

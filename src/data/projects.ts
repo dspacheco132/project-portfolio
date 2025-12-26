@@ -1,4 +1,6 @@
 // Replace StaticImageData with string since we don't want to use next/image
+const CDN_BASE_URL = "https://r2.diogopacheco.com";
+
 export type Project = {
   id: string;
   title: string;
@@ -13,20 +15,13 @@ export type Project = {
   extraImages?: { url: string; alt?: string }[];
 };
 
-// images
-import flask_ai_chat from "../../public/flaskaichat.png";
-import merit_jolera from "../../public/merit-jolera.jpg";
-import kubernetes_webserver from "../../public/fa-minikube.png";
-import terraform_project from "../../public/terraform.png";
-import docker_cleanup from "../../public/dockercleanup.png";
-
 export const projects: Project[] = [
   {
     id: "featured-1",
     title: "EV Locator",
     description:
       "Electric Vehicle Search and Comparison Platform - A comprehensive web application for searching, comparing, and locating electric and plug-in hybrid vehicles across the North American market.",
-    image: "/3D-EVLOCATOR.png",
+    image: `${CDN_BASE_URL}/public/3D-EVLOCATOR.png`,
     tags: ["React", "TypeScript", "FastAPI", "Python", "Redis", "Docker", "Nginx", "AWS", "Cloudflare"],
     link: "https://evlocator.sagewell.com/",
     date: "2025-08-03",
@@ -39,7 +34,7 @@ export const projects: Project[] = [
     title: "Sagewell Website",
     description:
       "Corporate website development and deployment focused on strengthening digital presence, delivering modern design, and optimizing content for the company.",
-    image: "/SAGEWELL-COM.gif",
+    image: `${CDN_BASE_URL}/public/SAGEWELL-COM%20copy.gif`,
     tags: ["React", "TypeScript", "Vercel", "SEO", "Strapi", "Figma", "Photoshop", "Illustrator"],
     link: "https://www.sagewell.com",
     date: "2025-08-03",
@@ -52,7 +47,7 @@ export const projects: Project[] = [
     title: "RFIDConnect",
     description:
       "Automated attendance registration system using RFID technology for schools.",
-    image: "/RFIDCONNECT.png",
+    image: `${CDN_BASE_URL}/public/RFIDCONNECT.png`,
     tags: [
       "RFID",
       "Attendance",
@@ -69,36 +64,40 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Swift132/rfidconnect",
     extraImages: [
       {
-        url: "/lovable-uploads/2f821fa2-8ff4-4f14-9690-f5bdacfbaf9e.png",
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/dashboard.webp`,
         alt: "Dashboard screen of RFIDConnect web app"
       },
       {
-        url: "/lovable-uploads/3e795086-9ae9-46bf-9fe1-30ee5213c276.png",
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/login.webp`,
         alt: "Login screen of RFIDConnect"
       },
       {
-        url: "/lovable-uploads/4701e051-9925-4dba-b5f8-39246b0a9462.png",
-        alt: "RFIDConnect student RFID card (front side)"
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/design-prototypes.webp`,
+        alt: "Design screens and Figma prototypes of RFIDConnect"
       },
       {
-        url: "/lovable-uploads/60174354-556d-45e2-a487-bf09597af50a.png",
-        alt: "RFIDConnect student RFID card (back side)"
-      },
-      {
-        url: "/lovable-uploads/78e27671-2f3b-4b05-8ff9-860cdcbe9fff.png",
-        alt: "RFIDConnect prototype with student card and LCD display"
-      },
-      {
-        url: "/lovable-uploads/91a5fed6-9b45-4f19-9e42-aae2adecb239.png",
-        alt: "RFIDConnect prototype with student card on sensor"
-      },
-      {
-        url: "/lovable-uploads/a8a44476-cb38-4721-bd35-c4f351b9d99d.png",
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/hardware-wiring.webp`,
         alt: "RFIDConnect hardware wiring and components inside the prototype"
       },
       {
-        url: "/lovable-uploads/cf0a311d-da29-4994-8aa9-4f35d9c207a0.png",
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/lcd-display.webp`,
         alt: "RFIDConnect LCD displaying a welcome message"
+      },
+      {
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/prototype-sensor.webp`,
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/prototype-card.webp`,
+        alt: "RFIDConnect prototype with student card on sensor"
+      },
+      {
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/card-front.webp`,
+        alt: "RFIDConnect student RFID card (front side)"
+      },
+      {
+        url: `${CDN_BASE_URL}/public/projects/rfidconnect/prototype-display.webp`,
+        alt: "RFIDConnect prototype with student card and LCD display"
       }
     ]
   },
@@ -107,7 +106,7 @@ export const projects: Project[] = [
     title: "Flask AI Chat",
     description:
       "A simple AI chat application built with Flask and deployed with Docker.",
-    image: flask_ai_chat,
+    image: `${CDN_BASE_URL}/public/projects/flask-ai-chat/main.webp`,
     tags: ["Flask", "AI", "Docker", "Python"],
     link: "https://github.com/dspacheco132/openrouter-api.git",
     date: "2023-12-15",
@@ -120,7 +119,7 @@ export const projects: Project[] = [
     title: "Terraform Infrastructure Project",
     description:
       "AWS infrastructure setup with Terraform, creating an Ubuntu EC2 instance with proper security configuration.",
-    image: terraform_project,
+    image: `${CDN_BASE_URL}/public/projects/terraform/main.webp`,
     tags: ["Terraform", "AWS", "Infrastructure as Code", "DevOps"],
     link: "https://github.com/dspacheco132/prj-terraform.git",
     date: "2024-01-30",
@@ -132,7 +131,7 @@ export const projects: Project[] = [
     title: "Kubernetes Web Server",
     description:
       "NGINX web server running in a Kubernetes cluster with Minikube, including ConfigMap and Ingress.",
-    image: kubernetes_webserver,
+    image: `${CDN_BASE_URL}/public/projects/kubernetes/main.webp`,
     tags: ["Kubernetes", "NGINX", "Minikube", "DevOps"],
     link: "https://github.com/dspacheco132/kubernets-test.git",
     date: "2024-02-15",
@@ -144,7 +143,7 @@ export const projects: Project[] = [
     title: "Docker Cleanup Script",
     description:
       "A comprehensive shell script for cleaning up Docker environments.",
-    image: "https://s3.swift-ai.pt/imagens/dockercleanup.png",
+    image: `${CDN_BASE_URL}/public/projects/docker-cleanup/main.webp`,
     tags: ["Docker", "Shell Script", "DevOps", "System Administration"],
     link: "https://github.com/dspacheco132/clean-docker.git",
     date: "2024-11-10",
@@ -156,7 +155,7 @@ export const projects: Project[] = [
     title: "S3 LocalStack",
     description:
       "Local AWS S3 simulation using LocalStack for development and testing purposes.",
-    image: "https://s3.swift-ai.pt/imagens/localstack.png",
+    image: `${CDN_BASE_URL}/public/projects/localstack/s3-localstack.png`,
     tags: ["AWS", "S3", "LocalStack", "Docker", "Development"],
     link: "https://github.com/dspacheco132/s3-local-stack.git",
     date: "2025-06-11",

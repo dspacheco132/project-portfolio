@@ -123,15 +123,15 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-lg text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to Work Together?</h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to Work Together?</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
                 If you have an interesting project or an opportunity you'd like to discuss, 
                 don't hesitate to get in touch. I'm always available to chat!
               </p>
               <motion.a
                 href="mailto:diogopacheco132@gmail.com"
-                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+                className="inline-flex items-center justify-center bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white focus:ring-offset-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -2,11 +2,9 @@
 
 # 🚀 Diogo Pacheco - Portfolio
 
-![Portfolio Preview](https://portfolio.swift-ai.pt/preview.png)
-
 **Modern, responsive portfolio showcasing my projects and skills**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Portfolio-blue?style=for-the-badge&logo=vercel)](https://portfolio.swift-ai.pt)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Portfolio-blue?style=for-the-badge&logo=vercel)](https://diogopacheco.com)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -19,9 +17,9 @@
 
 <div align="center">
 
-<img src="public/diogo-profile1.jpg" alt="Diogo Pacheco" width="200" style="border-radius: 50%; border: 4px solid #3b82f6;">
+<img src="https://r2.diogopacheco.com/public/photo-dspacheco.jpeg" alt="Diogo Pacheco" width="200" style="border-radius: 50%; border: 4px solid #3b82f6;">
 
-*Software Developer & Cloud Engineer*
+*Software Developer & Cloud Architect*
 
 </div>
 
@@ -45,6 +43,44 @@ Welcome to my personal portfolio! I'm a passionate software developer with exper
 - 🎯 **Project Showcase**: Detailed project presentations with live demos
 - 📧 **Contact Integration**: Easy-to-use contact form
 - 🌙 **Dark/Light Mode**: Toggle between themes
+
+---
+
+## 🎯 Use as Template
+
+This portfolio is designed to be used as a base template for your own portfolio! Feel free to fork this repository and customize it to showcase your own projects, skills, and achievements.
+
+### How to Use
+
+1. **Fork this repository** or clone it to your own GitHub account
+2. **Customize the content** in `src/data/projects.ts` with your own projects
+3. **Update personal information** in components like `ProfileSection.tsx` and `About.tsx`
+4. **Replace images** with your own photos and project screenshots
+5. **Modify styling** in `tailwind.config.ts` to match your preferences
+6. **Deploy** to Vercel, Netlify, or your preferred hosting platform
+
+### What's Included
+
+- ✅ Fully responsive design (mobile-first)
+- ✅ Dark/Light mode support
+- ✅ Project showcase with filtering and search
+- ✅ About page with skills, certifications, and timeline
+- ✅ Contact page with form integration
+- ✅ SEO optimized
+- ✅ Accessible (WCAG AA compliant)
+- ✅ Fast and performant (built with Vite)
+
+### Quick Customization Checklist
+
+- [ ] Update personal information and bio
+- [ ] Add your own projects to `src/data/projects.ts`
+- [ ] Replace images (logo, profile photo, project screenshots)
+- [ ] Update social media links in Footer and Contact components
+- [ ] Modify color scheme in `tailwind.config.ts` (optional)
+- [ ] Update metadata in `index.html` for SEO
+- [ ] Change domain/CDN URLs if using custom image hosting
+
+**Note:** Remember to update the license and attribution if you plan to use this commercially or make significant modifications.
 
 ---
 
@@ -165,30 +201,6 @@ module.exports = {
   }
 }
 ```
-
----
-
-## 📱 Screenshots
-
-<div align="center">
-
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop](https://via.placeholder.com/400x250/1f2937/ffffff?text=Desktop+View) | ![Mobile](https://via.placeholder.com/200x400/1f2937/ffffff?text=Mobile+View) |
-
-</div>
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 

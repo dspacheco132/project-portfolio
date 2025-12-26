@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Search, Filter, SortAsc, SortDesc, Calendar, Tag, Star, Clock, Code, Globe, Github } from "lucide-react";
+import { Search, Filter, SortAsc, SortDesc, Calendar, Tag, Star, Clock, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ProjectsSidebarProps {
   tags: string[];
@@ -30,7 +29,6 @@ const ProjectsSidebar = ({
   projects
 }: ProjectsSidebarProps) => {
   const [debouncedSearch, setDebouncedSearch] = useState(searchQuery);
-  const [showStats, setShowStats] = useState(true);
 
   // Debounce search input
   useEffect(() => {
@@ -50,24 +48,6 @@ const ProjectsSidebar = ({
     { value: "complexity", label: "By Complexity", icon: Star },
   ];
 
-  // Calculate project statistics
-  const stats = {
-    totalProjects: projects.length,
-    withLiveDemo: projects.filter(p => p.liveUrl).length,
-    withGithub: projects.filter(p => p.githubUrl).length,
-    recentProjects: projects.filter(p => {
-      const projectDate = new Date(p.date || "");
-      const sixMonthsAgo = new Date();
-      sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
-      return projectDate > sixMonthsAgo;
-    }).length,
-    avgTagsPerProject: Math.round(projects.reduce((acc, p) => acc + p.tags.length, 0) / projects.length),
-    mostUsedTech: tags.reduce((acc, tag) => {
-      const count = projects.filter(p => p.tags.includes(tag)).length;
-      return count > acc.count ? { tag, count } : acc;
-    }, { tag: "", count: 0 })
-  };
-
   return (
     <div className="w-80 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-sm h-full overflow-y-auto">
       <div className="p-6 pt-4 pr-2 space-y-6">
@@ -81,45 +61,6 @@ const ProjectsSidebar = ({
             {projectCount} project{projectCount !== 1 ? 's' : ''} found
           </p>
         </div>
-
-        {/* Project Statistics */}
-        {showStats && (
-          <Card className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800/50 dark:to-blue-900/30 border-slate-200 dark:border-slate-700 shadow-sm">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-slate-700 dark:text-slate-200 flex items-center gap-2">
-                <Star className="h-4 w-4 text-blue-500" />
-                Project Statistics
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="flex items-center gap-2">
-                  <Globe className="h-3 w-3 text-emerald-500" />
-                  <span className="text-slate-600 dark:text-slate-300">{stats.withLiveDemo} Live</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Github className="h-3 w-3 text-slate-500" />
-                  <span className="text-slate-600 dark:text-slate-300">{stats.withGithub} GitHub</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="h-3 w-3 text-amber-500" />
-                  <span className="text-slate-600 dark:text-slate-300">{stats.recentProjects} Recent</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Code className="h-3 w-3 text-violet-500" />
-                  <span className="text-slate-600 dark:text-slate-300">{stats.avgTagsPerProject} Avg Tags</span>
-                </div>
-              </div>
-              {stats.mostUsedTech.tag && (
-                <div className="pt-2 border-t border-slate-200 dark:border-slate-700">
-                  <p className="text-xs text-slate-600 dark:text-slate-300">
-                    Most used: <span className="font-medium text-blue-600 dark:text-blue-400">{stats.mostUsedTech.tag}</span> ({stats.mostUsedTech.count} projects)
-                  </p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
 
         {/* Search */}
         <div className="space-y-2">

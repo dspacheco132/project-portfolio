@@ -43,7 +43,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -53,7 +53,7 @@ const ContactForm = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h2>
+            <h2 id="contact-heading" className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h2>
             <p className="text-gray-600 dark:text-gray-300">
               Have an interesting project or opportunity? Let's talk!
             </p>
@@ -66,24 +66,30 @@ const ContactForm = () => {
             viewport={{ once: true }}
             onSubmit={handleSubmit}
             className="space-y-6 bg-white dark:bg-gray-750 p-8 rounded-lg shadow-md"
+            aria-label="Contact form"
+            noValidate
           >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Name
+                Name <span className="text-red-600" aria-label="required">*</span>
               </label>
               <Input
                 id="name"
                 name="name"
+                type="text"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500"
                 required
+                aria-required="true"
+                aria-describedby="name-description"
               />
+              <span id="name-description" className="sr-only">Enter your full name</span>
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Email
+                Email <span className="text-red-600" aria-label="required">*</span>
               </label>
               <Input
                 id="email"
@@ -91,29 +97,37 @@ const ContactForm = () => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500"
                 required
+                aria-required="true"
+                aria-describedby="email-description"
+                autoComplete="email"
               />
+              <span id="email-description" className="sr-only">Enter your email address</span>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Message
+                Message <span className="text-red-600" aria-label="required">*</span>
               </label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full h-32 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                className="w-full h-32 dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500"
                 required
+                aria-required="true"
+                aria-describedby="message-description"
               />
+              <span id="message-description" className="sr-only">Enter your message</span>
             </div>
 
             <Button
               type="submit"
-              className="w-full group"
+              className="w-full group focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               disabled={isSubmitting || isSubmitted}
+              aria-describedby="submit-description"
             >
               {isSubmitting ? (
                 <span className="flex items-center">
