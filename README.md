@@ -228,6 +228,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **⭐ If you found this project helpful, please give it a star!**
 
-Made with ❤️ by [Diogo Pacheco](https://portfolio.swift-ai.pt)
+Made with ❤️ by [Diogo Pacheco](https://diogopacheco.com)
 
 </div>
