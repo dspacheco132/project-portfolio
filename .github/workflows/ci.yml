@@ -1,0 +1,74 @@
+name: CI/CD - Build Test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+
+jobs:
+  test-build:
+    name: Test Build
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [20.x]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Audit dependencies for vulnerabilities
+        run: npm audit --audit-level=moderate
+        continue-on-error: false
+      
+      - name: Run linter
+        run: npm run lint
+        continue-on-error: false
+      
+      - name: Type check
+        run: npm run type-check
+        continue-on-error: false
+      
+      - name: Build project
+        run: npm run build
+        continue-on-error: false
+      
+      - name: Check build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "❌ Build failed: dist directory not found"
+            exit 1
+          fi
+          
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ Build failed: index.html not found in dist"
+            exit 1
+          fi
+          
+          echo "✅ Build successful: dist directory contains build artifacts"
+          ls -lah dist/
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: build-artifacts-${{ matrix.node-version }}
+          path: dist/
+          retention-days: 1

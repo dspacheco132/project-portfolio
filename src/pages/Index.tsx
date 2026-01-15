@@ -10,9 +10,12 @@ import { projects } from "../data/projects";
 
 const Index = () => {
   // Get specific projects for featured section - memoized to avoid recalculation
-  const featuredProjectIds = ["featured-1", "featured-2", "featured-3"]; // EV Locator, Sagewell Website, RFIDConnect
+  // EV Locator, Sagewell Website, RFIDConnect
   const featuredProjects = useMemo(
-    () => projects.filter(project => featuredProjectIds.includes(project.id)),
+    () => {
+      const featuredProjectIds = ["featured-1", "featured-2", "featured-3"];
+      return projects.filter(project => featuredProjectIds.includes(project.id));
+    },
     []
   );
 

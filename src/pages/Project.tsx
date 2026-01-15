@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Globe, Github, Calendar } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getProjectById } from "../data/projects";
+import { getProjectById, Project } from "../data/projects";
 
 // Helper type for extraImages (optional field)
 type ExtraImage = { url: string; alt?: string };
@@ -30,7 +30,7 @@ const Project = () => {
   }
 
   // RFIDConnect gallery (use only if extraImages exists for this project)
-  const extraImages: ExtraImage[] = (project as any).extraImages || [];
+  const extraImages: ExtraImage[] = (project as Project).extraImages || [];
 
   return (
     <div className="min-h-screen flex flex-col dark:bg-gray-900 transition-colors duration-300">
