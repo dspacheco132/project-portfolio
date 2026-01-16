@@ -13,6 +13,7 @@ export type Project = {
   liveUrl?: string; // Add liveUrl field
   githubUrl?: string; // Add githubUrl field
   extraImages?: { url: string; alt?: string }[];
+  youtubeUrl?: string; // Add YouTube video URL field
 };
 
 export const projects: Project[] = [
@@ -214,6 +215,7 @@ export const projects: Project[] = [
     date: "2025-08-10",
     longDescription: "A minimal Docker Compose setup for self-hosting Supabase locally. This project provides a complete Supabase stack including PostgreSQL database, authentication, storage, and all necessary services. It includes backup and restore scripts, making it easy to manage your self-hosted Supabase instance for development and production use.",
     githubUrl: "https://github.com/dspacheco132/supabase-deploy.git",
+    youtubeUrl: "https://www.youtube.com/watch?v=pJkO1j5TwxA&t=354s",
   },
   {
     id: "12",
