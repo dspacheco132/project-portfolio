@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Globe, Github, Calendar } from "lucide-react";
+import { ArrowLeft, Globe, Github, Calendar, Play, CheckCircle2 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getProjectById, Project } from "../data/projects";
@@ -125,6 +125,76 @@ const Project = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-12 whitespace-pre-line">
                 {project.longDescription}
               </p>
+
+              {/* YouTube Video */}
+              {project.youtubeUrl && (
+                <div className="mb-16">
+                  {/* Header with icon and title */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                      <Play className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                      How to Customize Emails in Supabase Self-Hosted
+                    </h2>
+                  </div>
+                  
+                  {/* Video Player */}
+                  <div className="mb-8">
+                    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+                      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                        <iframe
+                          className="absolute top-0 left-0 w-full h-full"
+                          src={project.youtubeUrl.replace("watch?v=", "embed/").split("&")[0]}
+                          title="How to Customize Emails in Supabase Self-Hosted"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Description and Learning Points */}
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 border border-blue-100 dark:border-gray-700 shadow-sm">
+                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                      In this video, you'll learn how to fully customize the transactional emails sent by a self-hosted Supabase instance. We'll walk through how to configure your email provider, update email templates, and make sure every message your users receive matches your brand and application flow.
+                    </p>
+                    
+                    <div className="space-y-3">
+                      <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 uppercase tracking-wide">
+                        What you'll learn:
+                      </p>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">
+                            Configure SMTP in Supabase
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">
+                            Customize email templates
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">
+                            Authentication emails handling
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">
+                            Test and validate setup
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 {project.liveUrl && (
