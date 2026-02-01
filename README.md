@@ -231,3 +231,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Made with ❤️ by [Diogo Pacheco](https://diogopacheco.com)
 
 </div>
+
