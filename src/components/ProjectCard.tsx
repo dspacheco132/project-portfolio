@@ -24,36 +24,48 @@ const ProjectCard = memo(({ project }: ProjectCardProps) => {
           decoding="async"
         />
         
-        {/* Overlay with Action Buttons */}
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-          <Link to={`/project/${project.id}`} aria-label={`View details for ${project.title}`}>
-            <Button size="sm" variant="secondary" className="backdrop-blur-sm focus:ring-2 focus:ring-blue-500">
-              <Eye className="h-4 w-4 mr-2" aria-hidden="true" />
-              View
-            </Button>
-          </Link>
-          
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-              aria-label={`View ${project.title} source code on GitHub (opens in new tab)`}
-            >
+        {/* Overlay: View + Code on first row; Live on second row only when 3 buttons */}
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 p-3">
+          <div className="flex items-center justify-center gap-2">
+            <Link to={`/project/${project.id}`} aria-label={`View details for ${project.title}`}>
               <Button size="sm" variant="secondary" className="backdrop-blur-sm focus:ring-2 focus:ring-blue-500">
-                <Github className="h-4 w-4 mr-2" aria-hidden="true" />
-                Code
+                <Eye className="h-4 w-4 mr-2" aria-hidden="true" />
+                View
               </Button>
-            </a>
-          )}
-          
-          {project.liveUrl && (
+            </Link>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} source code on GitHub (opens in new tab)`}
+              >
+                <Button size="sm" variant="secondary" className="backdrop-blur-sm focus:ring-2 focus:ring-blue-500">
+                  <Github className="h-4 w-4 mr-2" aria-hidden="true" />
+                  Code
+                </Button>
+              </a>
+            )}
+            {project.liveUrl && !project.githubUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} live demo (opens in new tab)`}
+              >
+                <Button size="sm" variant="secondary" className="backdrop-blur-sm focus:ring-2 focus:ring-blue-500">
+                  <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
+                  Live
+                </Button>
+              </a>
+            )}
+          </div>
+          {project.liveUrl && project.githubUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block"
+              className="inline-flex justify-center"
               aria-label={`View ${project.title} live demo (opens in new tab)`}
             >
               <Button size="sm" variant="secondary" className="backdrop-blur-sm focus:ring-2 focus:ring-blue-500">
