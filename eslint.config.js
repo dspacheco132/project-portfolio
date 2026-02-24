@@ -19,6 +19,12 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      // Newer versions of eslint-plugin-react-hooks include additional React Compiler–oriented rules
+      // in the recommended preset. Keep the classic Hooks rules enabled, but disable the stricter
+      // ones to avoid blocking builds for patterns that are acceptable in this codebase.
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/purity": "off",
+      "react-hooks/preserve-manual-memoization": "off",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
