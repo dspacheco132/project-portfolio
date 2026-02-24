@@ -262,6 +262,47 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dspacheco132/grafana-prj.git",
   },
   {
+    id: "splunk-universal-forwarder",
+    title: "Splunk Universal Forwarder on AWS EC2",
+    description:
+      "End-to-end validation of a Splunk Universal Forwarder pipeline from a Windows 11 EC2 instance in AWS to Splunk Enterprise, covering data collection, forwarding, indexing, and search.",
+    image: `${CDN_BASE_URL}/public/splunk-enterprise-security-dashboard-hero.avif`,
+    tags: [
+      "Splunk",
+      "Universal Forwarder",
+      "Logging",
+      "Observability",
+      "Monitoring",
+      "AWS",
+      "EC2",
+      "Windows 11",
+      "DevOps",
+    ],
+    date: "2025-03-20",
+    longDescription:
+      "Implemented and validated a logging pipeline using Splunk Universal Forwarder installed on a Windows 11 EC2 instance in AWS. The forwarder was configured to collect machine and application data, perform local processing, and securely forward events to Splunk Enterprise, where they are indexed and exposed through the search interface. A supporting architecture diagram documents the full flow—from collection on the EC2 host, through the Universal Forwarder, to ingestion and search in Splunk Enterprise—and a test plan confirmed that all expected events arrive with correct host, source, and timestamps.",
+    highlights: [
+      "Verified end-to-end Splunk pipeline from Windows 11 EC2 to Splunk Enterprise",
+      "Configured Splunk Universal Forwarder for machine data collection, processing, and secure forwarding",
+      "Documented architecture and test plan, including search validation and host/source mapping",
+    ],
+    extraImages: [
+      {
+        url: `${CDN_BASE_URL}/public/splunk-prj.png`,
+        alt: "Diagram of Splunk Universal Forwarder data flow from Windows 11 EC2 to Splunk Enterprise",
+        explanation: `## Data flow overview
+
+- **Source**: Windows 11 EC2 instance running in AWS
+- **Agent**: Splunk Universal Forwarder installed on the instance
+- **Pipeline**:
+  1. Machine and application data collection
+  2. Local parsing and forwarding by the Universal Forwarder
+  3. Ingestion, indexing, and storage in Splunk Enterprise
+- **Outcome**: Events are visible in Splunk Search with correct host, source, and sourcetype, confirming healthy end-to-end telemetry.`,
+      },
+    ],
+  },
+  {
     id: "14",
     title: "Transcriber Whisper API",
     description:
@@ -338,6 +379,38 @@ export const projects: Project[] = [
         explanation: "**Copy-to-clipboard** short URL with **Open Graph** metadata for rich previews when shared on social platforms."
       }
     ]
+  },
+  {
+    id: "wazuh-siem-aws",
+    title: "Wazuh SIEM on AWS",
+    description:
+      "Deployment of a Wazuh SIEM server on an Ubuntu EC2 instance in AWS, with an agent installed on a Windows Server host for centralized security monitoring.",
+    image: `${CDN_BASE_URL}/public/siem-dashboard.png`,
+    tags: [
+      "Wazuh",
+      "SIEM",
+      "Security Monitoring",
+      "Logging",
+      "AWS",
+      "EC2",
+      "Ubuntu",
+      "Windows Server",
+    ],
+    date: "2026-02-24",
+    longDescription:
+      "Installed and configured a Wazuh server on an Ubuntu EC2 instance in AWS and connected a Windows Server machine as an agent. Validated end-to-end event collection, including security logs and system telemetry, and used Wazuh dashboards to visualize alerts and host posture. The setup demonstrates practical SIEM deployment skills: provisioning infrastructure on AWS, hardening access, registering agents, and confirming that events flow correctly from Windows Server to the central Wazuh manager.",
+    highlights: [
+      "Provisioned and configured a Wazuh SIEM server on Ubuntu in AWS",
+      "Registered a Windows Server host as an agent and confirmed event forwarding",
+      "Used Wazuh dashboards to inspect alerts, logs, and host security posture",
+    ],
+    extraImages: [
+      {
+        url: `${CDN_BASE_URL}/public/environment-wasuh.png`,
+        alt: "Setup photo showing AWS console and Wazuh dashboard on multiple screens",
+        explanation: `Photo of the lab environment with the AWS console managing the Ubuntu EC2 instance running Wazuh and the Wazuh dashboards open, confirming that the Windows Server agent is sending events correctly.`,
+      },
+    ],
   },
 ];
 

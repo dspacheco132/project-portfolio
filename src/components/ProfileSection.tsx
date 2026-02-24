@@ -59,7 +59,7 @@ const ProfileSection = () => {
             </h1>
             
             <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-medium">
-              Cloud Architect & Software Developer
+              Cloud Architect & Cybersecurity Specialist
             </p>
             
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-8 leading-relaxed">
