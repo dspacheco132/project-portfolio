@@ -40,6 +40,17 @@ const Resume = () => {
 
   const experiences = [
     {
+      title: "Support Engineer",
+      company: "Starfish Storage Corporation",
+      period: "Present",
+      location: "Remote · Portugal",
+      description: [
+        "Technical support for enterprise unstructured data management and storage software",
+        "Troubleshooting, customer communication, and coordination with engineering",
+        "Documentation and knowledge sharing for recurring issues and product usage",
+      ],
+    },
+    {
       title: "Cloud Applications Internship",
       company: "SMC - Serviços Municipais de Comunicações",
       period: "August 2025 - October 2025 (3 months)",
@@ -300,11 +311,12 @@ const Resume = () => {
               Summary
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              I am Diogo Pacheco, a focused, practical person with a passion for
-              problem-solving. I value continuous learning and teamwork to
-              achieve objective and relevant results. Completed technical
-              training in Computer Networks and Cybersecurity at ENTA (Escola de
-              Novas Tecnologias dos Açores).
+              I am Diogo Pacheco, currently a Support Engineer at Starfish
+              Storage Corporation. I am a focused, practical person with a
+              passion for problem-solving. I value continuous learning and
+              teamwork to achieve objective and relevant results. Completed
+              technical training in Computer Networks and Cybersecurity at ENTA
+              (Escola de Novas Tecnologias dos Açores).
             </p>
           </motion.section>
 

@@ -59,13 +59,13 @@ const ProfileSection = () => {
             </h1>
             
             <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-medium">
-              Cloud Architect & Cybersecurity Specialist
+              Support Engineer at Starfish Storage Corporation
             </p>
             
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-8 leading-relaxed">
               I am a focused and practical person with a passion for solving problems.
               I value continuous learning and teamwork to achieve objective and relevant results.
-              AWS Cloud Architect certified with CCNA and CyberOps certifications. 
+              Currently supporting customers at Starfish Storage Corporation. AWS Solutions Architect certified with CCNA and CyberOps certifications.
               With experience in software development through various projects, cloud infrastructure, network security, and modern technologies including AWS Cloud, Oracle Cloud, OAuth, Tailscale, and more.
             </p>
             
