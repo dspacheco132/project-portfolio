@@ -1,5 +1,8 @@
 import sharp from 'sharp';
 import fs from 'fs/promises';
+
+// Block HEIF/AVIF and SVG decoders — this script only processes JPEG/PNG from trusted local files.
+sharp.block({ operation: ['VipsForeignLoadHeif', 'VipsForeignLoadSvg'] });
 import path from 'path';
 import { fileURLToPath } from 'url';
 
